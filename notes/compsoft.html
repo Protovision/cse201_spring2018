@@ -111,6 +111,97 @@
 
 			<p>A path that does <u>not</u> start with a root name or root directory is known as a <i>relative path</i>, referring to a file relative to some directory on the file system which may not necessarily be known.</p>
 
+			<h1>Bash</h1>
+
+			<p>As mentioned earlier, bash is the most popular command shell in use, it is also the default command shell for macOS and many Linux distributions. It is important that you learn the basics of bash because this is the program that you will use to invoke other programs that are essential to this course and in your future endeavors as a computer scientist/engineer.</p>
+
+			<p>Although it is essential to know, this course is not primarily concerned with teaching bash, but for this first week we expect you to learn and practice bash because you will be using it for the rest of this course and your future courses here.</p>
+
+			<p>When you open the terminal to access bash, you will be presented with a <i>prompt</i>. The prompt can be customized but it usually defaults to an abbreviated path that represents the <i>current working directory</i> followed by a dollar sign.</p>
+
+			<p>The current working directory is a path to a directory that is used as the basis for any specified relative path.</p>
+
+			<p>Any bash command that processes or manipulates files will use the current working directory as a reference point for any file name or relative path that is supplied to that command.</p>
+
+			<p>A <i>command</i> in bash as well as many other command shells, usually takes the form of a sequence of words separated by spaces. The first word specifies the command and the rest of the words specify the <i>arguments</i> to that command.</p>
+			<p>The easiest command to execute is one that does not require arguments, just the command itself. Try executing the following command:</p>
+
+			<code>
+ls
+			</code>
+
+			<p>To execute a command, you must type the command and it's arguments into the command shell and press Enter.</p>
+
+			<p>After executing <tt>ls</tt>, you may get <i>output</i> that looks like this:</p>
+
+			<code>
+Desktop		Documents	Downloads	Music	Pictures
+			</code>
+
+			<p>This is a directory listing, the <tt>ls</tt> command by itself lists the files in the current working directory. If you want to get a directory listing for a different directory, you can change the current working directory with the <tt>cd</tt> command.</p>
+
+			<p>Assuming that our current working directory is our <i>home directory</i>, the command:
+			
+			<code>
+cd Desktop
+			</code>
+			
+			<p>will change the current working directory to the Desktop directory and from here, all the file system commands will be relative to that Desktop directory. What gets placed in the Desktop directory corresponds to what appears on your graphical desktop. Try the following command next and you will see a directory or folder appear on your graphical desktop:</p>
+
+			<code>
+mkdir test
+			</code>
+
+			<p><tt>mkdir</tt> stands for "make directory" it requires 1 arguments, the file name or path of the new directory to be created.</p>
+
+			<p>You should research and practice using the following commands to get a grasp on using bash:</p>
+
+			<table>
+				<tr>
+					<th>Command</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>cd</td>
+					<td>Change working directory</td>
+				</tr>
+				<tr>
+					<td>pwd</td>
+					<td>Print working directory</td>
+				</tr>
+				<tr>
+					<td>cp</td>
+					<td>Copy a file</td>
+				</tr>
+				<tr>
+					<td>ls</td>
+					<td>List the files in a directory</td>
+				</tr>
+				<tr>
+					<td>mkdir</td>
+					<td>Make directory</td>
+				</tr>
+				<tr>
+					<td>mv</td>
+					<td>Move file</td>
+				</tr>
+				<tr>
+					<td>rm</td>
+					<td>Remove file</td>
+				</tr>
+				<tr>
+					<td>rmdir</td>
+					<td>Remove empty directory</td>
+				</tr>
+				<tr>
+					<td>cat</td>
+					<td>Concatenate and display files</td>
+				</tr>
+				<tr>
+					<td>clear</td>
+					<td>Clear the terminal display</td>
+				</tr>
+			</table>
 		</div>
 	</body>
 </html>
