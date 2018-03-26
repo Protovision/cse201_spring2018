@@ -34,3 +34,17 @@ ul.nav li a:hover:not(.active) {
 	color: white;
 }
 
+code {
+	border-style: solid;
+	border-width: thin;
+	display: block;
+	font-family: monospace;
+	white-space: pre;
+}
+
+tt {
+	display: inline;
+	font-family: monospace;
+	white-space: pre;
+	margin: 1em 0;
+}

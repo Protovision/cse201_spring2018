@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../main.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="../index.html">Welcome</a></li>
+			<li><a class="active" href="#">Computers and Software</a></li>
+			<li><a href="#">C++ programming</a></li>
+			<li><a href="#">Variables, Types, and Values</a></li>
+			<li><a href="#">Computation and Input/Output</a></li>
+			<li><a href="#">Constness and Conversions</a></li>
+			<li><a href="#">Functions</a></li>
+			<li><a href="#">Debugging and Documentation</a></li>
+			<li><a href="#">Selection and conditions</a></li>
+			<li><a href="#">Iteration and Sequence containers</a></li>
+			<li><a href="#">Classes</a></li>
+		</ul>
+
+		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+			<h1>Computer science</h1>
+
+			<p>The name "computer science" is an accurate name in the sense that computers are heavily used in this science which is a science insofar as knowledge is being inquired into.</p>
+
+			<p>However, "computer science" should not be taken to mean "the study of computers" or even "the science of computers" because the computer, as it exists today, is a product of our creation. The computer is already built and thus there is no need to study it except to improve it.</p>
+
+			<p>There are generally 2 things that are being studied in computer science: computation and information. The fruits of this study can be demonstrated and applied by programming a computer, a robot, a car, or anything else that can perform a task based on a specific set of instructions.</p>
+
+			<p>One could say that computation and information are also being studied in mathematics and logic; there is also a lot of overlap between the knowledge that lies within these 3 domains. What makes computer science stand apart from mathematics and logic is an emphasis on time and space which constrains what can be computed and represented within a computer.</p>
+
+			<h1>Computers and operating systems</h1>
+
+			<p>Computers rely on programs to operate. A program is a set of instructions that a computer can execute. The most important program that all computers have is an operating system. The operating system is a program (or set of programs) that directly controls the computer, this includes control of: the mouse, the keyboard, the monitor, the fan, the networking interface, and the file storage devices. The operating system controls every physical component that makes up the computer.</p>
+
+			<p>There are many brands of operating systems today, but the 3 most popular desktop operating systems are: Windows, macOS, and Linux. The 2 most popular mobile operating systems are: Android and iOS.</p>
+
+			<p>Operating systems directly control the computer on behalf of other programs known as applications (now today known as "apps"). Users (the ones between the keyboard and chair) use applications to: browse the web, play music, edit documents, collect and edit pictures, and play games among many other things applications can provide.</p>
+
+			<p>Most operating systems have built-in interactive functionality for file management and application management that the user can access through buttons, menus, and windows. This type of interaction is possible when the program provides a "Graphical User Interface" (GUI) to the user.</p>
+
+			<h1>The command-line interface</h1>
+	
+			<p>Many graphical operating systems provide a program known as a command shell. The command shell is a program that allows the user to access various operating system services through an interface known as a command-line interface (CLI). A CLI is an interface with a text-only display and a keyboard-only input where the input takes the form of commands entered line-by-line.</p>
+
+			<p>The most popular brand of command shell for macOS and Linux is known as bash and it can be accessed through a program called the terminal. The command shell for Windows is known as the command prompt.</p>
+
+			<p>The command shell is an important program used by computer scientists and other advanced computer users for detailed and automated control of a computer.</p>
+
+			<h1>The file system</h1>
+
+			<p>Before using a command shell, it is essential to have knowledge of the computer's file system.</p>
+
+			<p>Despite a lack of standardization for file system concepts, there is a common understanding of file systems and the following definitions will apply for this course:</p>
+
+			<ul>
+				<li>A <i>file system</i> is a hierarchical collection of files.</li>
+				<li>A <i>file</i> is a an object in the file system that holds data.</li>
+				<li>A <i>directory</i> is a type of file that acts as a container of directory entries, which identify other files (some of which may be other, nested, directories).</li>
+				<li>A <i>file name</i> is a sequence of characters that names a file.</li>
+				<li>A <i>path</i> is a sequence of elements that identifies the location of a file.</li>
+			</ul>
+
+			<h2>File</h2>
+
+			<p>If you've used a computer more than a few times, you should at least have heard of the term "file" and you should have the basic understanding that files store data even when the computer is turned off. You also should understand that there are different types of files, although not in the same way that will be presented here.</p>
+
+			<p>By different types of files, you might be thinking of the distinction between sound files, image files, and document files; or you might be thinking of the file extensions: .txt, .mp3, .png.</p>
+
+			<p>As far as this is concerned on a broader level in computer science, those are all the same types of files and they are known as <i>regular files</i>. A regular file is the most common type of file, a regular file can store an image, a song, a movie, a book, or any other thing that has significance to the user.</p>
+
+			<p>A regular file does not redirect to another file, or to a list of directory entries, or to an entire physical device or network connection.</p>
+
+			<h2>Directory</h2>
+
+			<p>The 2nd most common type of file is a <i>directory</i>. Directories organize files into a hierarchical fashion. Directories are containers for files and other directories, another term for a directory is a folder.</p>
+
+			<p>When you query the contents of a directory, either through a command shell or an application programming interface, you will receive a list of directory entries. Each directory entry refers to a file that is inside of that directory, including that file's attributes.</p>
+
+			<p><i>file attributes</i> may include: the file size, file permissions, and the last modification time.</p>
+
+			<h2>File name</h2>
+			
+			<p>The term "file name" is often used ambiguously and interchangeably with "file path". To make things more clear in this course, <i>file name</i> refers to the name of a file as it is seen within the context of a single directory. Examples of file names include: "Untitled Document.txt", "index.html", "background.png", "data.csv"</p>
+
+			<p>The portion of a file name that begins at the last '.' is known as the <i>file extension</i>. ".txt", ".html", ".png", and ".csv" are all file extensions and they serve to indicate the type of data that a regular file stores. A file extension is completely optional for a file to have, you may sometimes encounter regular files that do not have a file extension and your operating system may ask you to choose a program to open that file with.</p>
+
+			<h2>Path</h2>
+
+			<p>A <i>file path</i>, or just <i>path</i> is a sequence of file names and other components that help identify a more precise location of a file within the file system.</p>
+
+			<p>If your operating system is Windows, your user name is "Guest", and you created an untitled folder on your desktop, then the path of that folder would most likely be: <tt>C:\Users\Guest\Desktop\Untitled Folder</tt>. On macOS, the path would be: <tt>/Users/Guest/Desktop/Untitled Folder</tt>. And on Linux, the path would most likely be: <tt>/home/Guest/Desktop/Untitled Folder</tt>.</p>
+
+			<p>With the exception of Windows, the components of a path are separated with a forward slash and each component names a directory that contains another directory that leads to the relevant file.</p>
+
+			<p>More formally a path is composed of the following:</p>
+
+			<ul>
+				<li>An optional <i>root name</i> (such as "C:" or "//myserver")</li>
+				<li>An optional <i>root directory</i> (such as "/home" or "/Users")</li>
+				<li>Zero or more of the following:</li>
+				<ul>
+					<li>A file name (such as "Documents" or "image.png")</li>
+					<li>A directory separator (such as "/" or "\")</li>
+				</ul>
+			</ul>
+
+			<p>The <i>root name</i> is the name of the device, partition, or server that the file system resides at. A <i>root directory</i> is a directory that exists in the top most region of the directory hierarchy.</p>
+
+			<p>A path that starts with a root name or root directory is known as an <i>absolute path</i> and such a path unambiguously refers to the exact location of a file within a file system.</p>
+
+			<p>A path that does <u>not</u> start with a root name or root directory is known as a <i>relative path</i>, referring to a file relative to some directory on the file system which may not necessarily be known.</p>
+
+		</div>
+	</body>
+</html>
