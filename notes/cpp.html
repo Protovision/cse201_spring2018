@@ -15,8 +15,8 @@
 			<li><a href="#">Computation and Input/Output</a></li>
 			<li><a href="#">Constness and Conversions</a></li>
 			<li><a href="#">Functions</a></li>
-			<li><a href="#">Debugging and Documentation</a></li>
 			<li><a href="#">Selection and conditions</a></li>
+			<li><a href="#">Debugging and Documentation</a></li>
 			<li><a href="#">Iteration and Sequence containers</a></li>
 			<li><a href="#">Classes</a></li>
 		</ul>
@@ -24,14 +24,22 @@
 		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
 			<h1>C++</h1>
 
-			<p>C++ is going to be the theme of this course, it is a computer programming language. A computer programming language is a set of symbols, rules, and meanings that constitute an artificial language that humans can use for specifying the instructions of a computer program.</p>
+			<p><a href="http://en.cppreference.com/w/">C++</a> is going to be the theme of this course, it is a computer programming language. A computer programming language is a set of symbols, rules, and meanings that constitute an artificial language that humans can use for specifying the instructions of a computer program.</p>
 
-			<p>You're in luck because C++ happens to be the most complicated programming language in the world!</p>
 
-			<p>A C++ program is a collection of C++ <i>source files</i>. A C++ source file is a text file containing C++ <i>source code</i>. The following is C++ source code for an entire C++ program:</p>
+			<p>A C++ program is a collection of C++ <i>source files</i>. A C++ source file is a text file containing C++ <i>source code</i>. 
+
+			<p>Since C++ programs are stored as text files in the file system, you will need a <i>text editor</i> to create and edit C++ programs. On many Linux distributions that have a graphical desktop environment, you should be able to find a text editor in the application menu. If you are using Linux and you see a button labeled "Activities" in the top-left corner, click on it and type "gedit" into the search bar and press Enter; you have now opened a text editor.</p>
+
+			<p>macOS and Windows also have their own built-in text editors; they are called "TextEdit" and "Notepad", respectively. While functional, TextEdit and Notepad, however, are not optimal for writing C++ source code because of a lack of essential features such as line numbering. You should download a text editor designed for computer programming if you wish to program on your own computer.</p>
+
+			<p>The C++ programming language is known as a <i>compiled</i> language because it requires the use of a special program known as a <i>compiler</i> so that a C++ program can be translated into a <i>program image</i> that the computer can execute.</p>
+
+			<p>A popular C++ compiler comes from the <a href="http://gcc.gnu.org">GNU Compiler Collection</a>, it is referred to as <a href="http://linux.die.net/man/1/g++"><tt>g++</tt></a> from the command shell. To compile your C++ program into a program image, you must execute the g++ command with the paths to your C++ source files as arguments.</p>
+
+			<p>The following is C++ source code for an entire C++ program:</p>
 			<code>
-#include &lt;iostream&gt;
-using namespace std;
+#include "std.h"
 
 int main()
 {
@@ -40,8 +48,22 @@ int main()
 }
 			</code>
 
-			<p>The C++ programming language is known as a <i>compiled</i> language because it requires the use of a special program known as a <i>compiler</i> so that a C++ program can be translated into a <i>program image</i> that the computer can execute.</p>
+			<p>The file "std.h" will be required for this program to be complete: you can download it <a href="../std.h" type="text/plain">here.</a></p>
 
+			<p>Suppose this C++ source code was saved to a file named "hello.cpp", residing in the current working directory together with the "std.h" file. Then, to compile "hello.cpp" the command would be:</p>
+
+			<code>
+g++ hello.cpp
+			</code>
+
+			<p>If you receive an error that says "No such file or directory", then your current working directory does not refer to the same directory of where you saved your C++ source files. Use the <tt>cd</tt> command to change to the proper directory. If you saved the "hello.cpp" and "std.h" files in your Documents directory, then the command <tt>cd ~/Documents</tt> should be used before attempting to compile (The <tt>~</tt> symbol is a special character within bash that refers to your "home directory", the directory that contains all of your user files).</p>
+
+			<p>After successfully compiling, the compiler will have then generated a file named "a.out", this is the default file name that g++ uses for the program image. The program image can then be executed from the command shell with the following command:</p>
+			<code>
+./a.out
+			</code>
+
+			<p>If all is successful, you should see the line "Hello world!" printed to the terminal.</p>
 		</div>
 	</body>
 </html>
