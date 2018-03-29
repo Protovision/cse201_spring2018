@@ -85,7 +85,7 @@ g++ hello.cpp
 
 			<p>All C++ programs must have exactly one function named "main", the <a href="http://en.cppreference.com/w/cpp/language/main_function"><i>main function</i></a> denotes the <i>entry point</i> of the C++ program. The first C++ <a href="http://en.cppreference.com/w/cpp/language/statements"><i>statement</i></a> to be executed in a C++ program, after <a href="http://en.cppreference.com/w/cpp/language/initialization"><i>initialization</i></a> takes place, is the first statement that resides in the <i>function body</i> of the main function.</p>
 
-			<p>Lines 5 and 6 are the two statements that <i>define</i> the function body of main.</p>
+			<p>Lines 4-7 make up the function body of main. Lines 5 and 6 are the statements inside this function body.</p>
 
 			<p>Line 5 is an <i>expression statement</i>. An expression statement is an <a href="http://en.cppreference.com/w/cpp/language/expressions"><i>expression</i></a> terminated by a semicolon. An expression is a sequence of <i>operators</i> and their <i>operands</i>; expressions specify a form of computation. Line 5 contains the <tt>operator &lt;&lt;</tt>, it is a <i>binary operator</i> because it requires 2 operands; in this case, it's left operand is <tt>cout</tt> and it's right operand is <tt>"Hello world!\n"</tt>. What this expression signifies is that the characters <tt>"Hello world!\n"</tt> are being <i>inserted</i> into the object named <tt>cout</tt>, this normally results in the <i>side effect</i> of the inserted data being displayed in the terminal window. The <tt>'\n'</tt> character inside of the right operand is an <i>escaped character</i>, it represents the "line feed" or "new line" character.</p>
 
