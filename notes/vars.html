@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Variables, Types, and Values</title>
+		<meta name="author" content="Mark Swoope">
+		<meta name="description" content="C++ programming">
+		<link rel="stylesheet" type="text/css" href="../main.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="../index.html">Welcome</a></li>
+			<li><a href="compsoft.html">Computers and Software</a></li>
+			<li><a href="cpp.html">C++ programming</a></li>
+			<li><a class="active" href="#">Variables, Types, and Values</a></li>
+			<li><a href="#">Computation and Input/Output</a></li>
+			<li><a href="#">Constness and Conversions</a></li>
+			<li><a href="#">Functions</a></li>
+			<li><a href="#">Selection and conditions</a></li>
+			<li><a href="#">Debugging and Documentation</a></li>
+			<li><a href="#">Iteration and Sequence containers</a></li>
+			<li><a href="#">Classes</a></li>
+		</ul>
+
+		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+			<h1>Variables, Types, and Values</h1>
+
+			<p>Variables are named regions of storage within a C++ program. They are places where data can be stored and retrieved. A variable is introduced into a C++ program through a declaration that specifies at least 2 things: the <a href="http://en.cppreference.com/w/cpp/language/type"><i>type</i></a> of the variable and the <a href="http://en.cppreference.com/w/cpp/language/identifiers#Names"><i>name</i></a> of the variable.</p>
+
+			<p>The type of a variable provides the way to interpret the data that is to be stored in that variable. The name of a variable provides a way for one to identify that variable in later parts of the C++ program.</p>
+			
+			<p>Here are the types that you should know for now:</p>
+
+			<table>
+				<tr>
+					<th>Type</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><tt>bool</tt></td>
+					<td>Boolean, for storing the value <tt>true</tt> or <tt>false</tt></td>
+				</tr>
+				<tr>
+					<td><tt>char</tt></td>
+					<td>Character, for storing a value such as: <tt>'A'</tt>, <tt>'1'</tt>, <tt>'?'</tt>, or <tt>' '</tt></td>
+				</tr>
+				<tr>
+					<td><tt>int</tt></td>
+					<td>Integer, for storing a value such as: <tt>42</tt>, <tt>-7</tt>, or <tt>0</tt></td>
+				</tr>
+				<tr>
+					<td><tt>double</tt></td>
+					<td>"Double precision floating point", for storing a value such as: <tt>3.4</tt>, <tt>-9.81</tt>, or <tt>0.0</tt></td>
+				</tr>
+				<tr>
+					<td><tt>string</tt></td>
+					<td>For storing a sequence of characters such as the value <tt>"Hello world"</tt></td>
+				</tr>
+			</table>
+
+			<p>A value expressed directly (such as: <tt>true</tt>, <tt>'A'</tt>, or <tt>42</tt>) is known as a <i>literal</i>. There are <a href="http://en.cppreference.com/w/cpp/language/bool_literal"><i>boolean literals</i></a>, <a href="http://en.cppreference.com/w/cpp/language/character_literal"><i>character literals</i></a>, <a href="http://en.cppreference.com/w/cpp/language/integer_literal"><i>integer literals</i></a>, <a href="http://en.cppreference.com/w/cpp/language/floating_literal"><i>floating-point literals</i></a>, and <a href="http://en.cppreference.com/w/cpp/language/string_literal"><i>string literals</i></a>.</p>
+
+			<p>Boolean literals are of type <tt>bool</tt>. The other 4 kinds of literals can have their type modified through prefixes or suffixes, but their default types are: <tt>char</tt> for character literals, <tt>int</tt> for integer literals, <tt>double</tt> for floating-point literals, and a type that is compatible with <tt>string</tt> for string literals.</p>
+
+		</div>
+	</body>
+</html>

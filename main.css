@@ -48,3 +48,15 @@ tt {
 	white-space: pre;
 	margin: 1em 0;
 }
+
+table {
+	overflow-x: auto;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
