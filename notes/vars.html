@@ -28,7 +28,7 @@
 
 			<p>The type of a variable provides the way to interpret the data that is to be stored in that variable. The name of a variable provides a way for one to identify that variable in later parts of the C++ program.</p>
 			
-			<p>Here are the types that you should know for now:</p>
+			<p>Here are the types that one should know for now:</p>
 
 			<table>
 				<tr>
@@ -61,6 +61,33 @@
 
 			<p>Boolean literals are of type <tt>bool</tt>. The other 4 kinds of literals can have their type modified through prefixes or suffixes, but their default types are: <tt>char</tt> for character literals, <tt>int</tt> for integer literals, <tt>double</tt> for floating-point literals, and a type that is compatible with <tt>string</tt> for string literals.</p>
 
+			<p>A variable stores a value and a value can be expressed as a literal. Whenever one attempts to store a value into a variable, one must make sure that the type of the value and the type of the variable are compatible.</p>
+
+			<p>The following is a <i>simple declaration</i> for a variable:</p>
+
+			<code>
+int x;
+			</code>
+
+			<p>This declaration allocates a region of storage that is large enough to store any value of type <tt>int</tt>, the identifier <tt>x</tt> is then introduced as the name of this storage. The value of this variable depends on the context of where it was declared; for now, one should assume that a variable has an <i>indeterminate value</i> unless one explicitly <i>assigns</i> a value to it first.</p>
+
+			<p>A variable can be assigned a value using an assignment operator. This can be performed within a simple declaration:</p>
+
+			<code>
+int x = 0;
+			</code>
+
+			<p>Now <tt>x</tt> is guaranteed to have the value 0. <i>Simple assignment</i> can also be performed after the variable has been declared and the operand that can be used for assigning can include: a literal, a variable, or an expression.</p>
+
+			<code>
+int a = 0;
+int b = 4;
+int c = a;
+a = b;
+b = 7;
+			</code>
+
+			<p>When the source code above executes, the values of the variables will be: 4 for <tt>a</tt>, 7 for <tt>b</tt>, and 0 for <tt>c</tt>.</p>
 		</div>
 	</body>
 </html>
