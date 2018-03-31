@@ -88,6 +88,49 @@ b = 7;
 			</code>
 
 			<p>When the source code above executes, the values of the variables will be: 4 for <tt>a</tt>, 7 for <tt>b</tt>, and 0 for <tt>c</tt>.</p>
+
+			<h1>Scope</h1>
+
+			<p>All variables and other named entities have a <i>scope</i>, which determines the portion of source code in which that name is valid.</p>
+
+			<p>Study the following source code and the comments included with it.</p>
+
+			<code>
+#include "std.h"
+
+int a = 0;			/* Scope of a begins */	
+
+int main()
+{
+	int b = 2;		/* Scope of first b begins */
+
+	{
+		int b = 3;	/* Scope of second b begins, interrupting the scope of the first b */
+		int c = b;	/* Scope of first c begins */
+		int d = 5;	/* Scope of d begins */
+
+		cout &lt;&lt; c &lt;&lt; endl;		/* Prints 3 */
+	}			/* Scope of second b, first c, and d end */
+
+	int c = b;		/* Scope of second c begins */
+
+	cout &lt;&lt; c &lt;&lt; endl;			/* Prints 2 */
+
+} 				/* Scope of first b and second c end */
+
+/* Scope of a ends at the end of this file */
+			</code>
+
+			<p>The insertion of <tt>endl</tt> into <tt>cout</tt> has the same effect as inserting a new line character into <tt>cout</tt>.</p>
+
+			<p>Variable <tt>a</tt> is said to be in <i>global scope</i>, which means it's <i>potential scope</i> begins at the <i>point of declaration</i> and ends at the end of the source file.</p>
+
+			<p>The other variables all have <i>block scope</i> because they are all declared inside some <i>block</i>, which is a brace-enclosed sequence of statements.</p>
+
+			<p>Variable <tt>b</tt> was declared in the block that is also the function body of <tt>main</tt>; <tt>b</tt>'s potential scope ends at the end of the <tt>main</tt> function. However, there is a nested block inside <tt>main</tt>'s function body; the declaration of another variable named <tt>b</tt> interrupts the scope of the previously declared <tt>b</tt>. Within this nested block scope, any appearance of <tt>b</tt> refers to the second <tt>b</tt> variable. After the nested scope ends, the scope of the first <tt>b</tt> resumes.</p>
+
+			<p>The second <tt>c</tt> variable is an entirely different variable from the first <tt>c</tt> because the first <tt>c</tt> already expired at the end of the nested block. Since the second <tt>b</tt> is also out of scope, the second <tt>int c = b;</tt> declaration assigns the value of the first <tt>b</tt>.</p>
+
 		</div>
 	</body>
 </html>
