@@ -12,7 +12,7 @@
 			<li><a href="compsoft.html">Computers and Software</a></li>
 			<li><a href="cpp.html">C++ programming</a></li>
 			<li><a class="active" href="#">Variables, Types, and Values</a></li>
-			<li><a href="#">Computation and Input/Output</a></li>
+			<li><a href="expr.html">Computation and Input/Output</a></li>
 			<li><a href="#">Constness and Conversions</a></li>
 			<li><a href="#">Functions</a></li>
 			<li><a href="#">Selection and conditions</a></li>
@@ -110,7 +110,7 @@ int main()
 		int d = 5;	/* Scope of d begins */
 
 		cout &lt;&lt; c &lt;&lt; endl;		/* Prints 3 */
-	}			/* Scope of second b, first c, and d end */
+	}			/* Scope of second b, first c, and d end. Scope of first b resumes. */
 
 	int c = b;		/* Scope of second c begins */
 
@@ -131,6 +131,7 @@ int main()
 
 			<p>The second <tt>c</tt> variable is an entirely different variable from the first <tt>c</tt> because the first <tt>c</tt> already expired at the end of the nested block. Since the second <tt>b</tt> is also out of scope, the second <tt>int c = b;</tt> declaration assigns the value of the first <tt>b</tt>.</p>
 
+			<p>The <i>actual scope</i> of a variable is the same as it's potential scope unless that variable's scope becomes interrupted by another entity with the same name within a nested scope.</p>
 		</div>
 	</body>
 </html>
