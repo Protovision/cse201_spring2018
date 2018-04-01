@@ -1,4 +1,4 @@
-* {
+p, li, h1, h2, h3, th, td {
 	font-family: "Source Sans Pro", "Myriad Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -59,4 +59,5 @@ th, td {
 	text-align: left;
 	padding: 8px;
 }
+
 
