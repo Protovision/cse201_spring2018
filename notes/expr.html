@@ -12,8 +12,8 @@
 			<li><a href="compsoft.html">Computers and Software</a></li>
 			<li><a href="cpp.html">C++ programming</a></li>
 			<li><a href="vars.html">Variables, Types, and Values</a></li>
+			<li><a class="active" href="#">Computation</a></li>
 			<!--
-			<li><a class="active" href="#">Computation and Input/Output</a></li>
 			<li><a href="#">Constness and Conversions</a></li>
 			<li><a href="#">Functions</a></li>
 			<li><a href="#">Selection and conditions</a></li>
@@ -24,72 +24,15 @@
 		</ul>
 
 		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
-			<p>In C++, computation is expressed in an <i>expression</i> which is composed of <i>operators</i> and <i>operands</i>.</p>
-
-			<p>The first expression that was shown so far was a <i>stream insertion</i> expression:</p>
-
-			<code>
-cout &lt;&lt; "Hello world!\n";
-			</code>
-
-			<p>Here, it's not apparent that computation is taking place; in fact, computation need not take place in an expression. What matters is that an operator is being used, this one being the <i>stream insertion operator</i> as denoted by <tt>&lt;&lt;</tt>.</p>
-
-			<p>Most expressions produce a result which is a value that can further be used by another operand within the same expression statement. The insertion operator returns it's left operand, thus one can "chain" additional insertion operations to the same object. The above statement could have been rewritten as:</p>
-
-			<code>
-cout &lt;&lt; "Hello" &lt;&lt; " " &lt;&lt; "world!" &lt;&lt; "\n";
-			</code>
-
-			<h1>Input/Output</h1>
-			
-			<p>An expression that uses the stream insertion operator does not "produce a result" in the sense of creating a new value, it returns the same value that was used for it's left operand whose type must be <tt>ostream</tt> to begin with.</p>
-
-			<p>The type of <tt>cout</tt> is <tt>ostream</tt>, it represents an <i>output stream</i>. A <i>stream</i> is an interface for transmitting data in an ordered sequence. An output stream only allows one to send data while an input stream only allows one to receive data. An Input/Output stream allows both. As you already know the stream insertion operator is used for sending data to an output stream.</p>
-
-			<p><tt>cout</tt>, which stands for "character output", is associated with the program's <i>standard output stream</i>; it is one of the 3 <i>standard streams</i> that every program has as it's own.</p>
-
-			<p>For console applications it is usually the case that: the <i>standard output stream</i> (<tt>cout</tt>) is associated with the terminal window, the <i>standard input stream</i> (<tt>cin</tt>) is associated with the keyboard, and the <i>standard error stream</i> (<tt>cerr</tt>) is also associated with the terminal window.</p>
-
-			<p><tt>cout</tt> and <tt>cerr</tt> are used the same way for different purposes, <tt>cout</tt> is for sending normal messages and <tt>cerr</tt> is for sending error messages. <tt>cin</tt> is for receiving data, usually from the user and the operator used for receiving data from an input stream is the <i>stream extraction operator</i>, symbolized by <tt>&gt;&gt;</tt>.</p>
-		
-			<p>The following terms are roughly synonomous with "input": read, receive, extract, scan, get</p>
-
-			<p>The following terms are roughly synonomous with "output": write, send, insert, print, put</p>
-
-			<p>The following program scans 2 numbers and prints the sum of those numbers.</p>
-
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008080">#include &quot;std.h&quot;</span>
-
-<span style="color: #000080; font-weight: bold">int</span> main()
-{
-	<span style="color: #000080; font-weight: bold">double</span> a, b, c;
-	cout &lt;&lt; <span style="color: #0000FF">&quot;Enter 2 numbers: &quot;</span>;
-	cin &gt;&gt; a &gt;&gt; b;
-	c = a + b;
-	cout &lt;&lt; <span style="color: #0000FF">&quot;The sum is: &quot;</span> &lt;&lt; c &lt;&lt; endl;
-	<span style="color: #000080; font-weight: bold">return</span> <span style="color: #0000FF">0</span>;
-}
-</pre></td></tr></table></div>
-
-			<p>Line 5 demonstrates the declaration of multiple variables of the same type in one statement.</p>
-
-			<p>Line 7 demonstrates the extraction of 2 values from <tt>cin</tt> into the variables <tt>a</tt> and <tt>b</tt>.</p>
-
-			<p>Line 8 demonstrates assignment to <tt>c</tt> from the value of the addition expression where the values of <tt>a</tt> and <tt>b</tt> are added. The result of such an addition expression is a temporary <tt>double</tt> value; the values of <tt>a</tt> and <tt>b</tt> remain unmodified.</p>
-
 			<h1>Computation</h1>
 
-			<p>These are some of the <i>arithmetic operators</i> provided by C++, the column labeled "Syntax" shows how they can be used in an expression where <tt>a</tt> and <tt>b</tt> can be any <i>subexpression</i> of appropriate types.</p>
+			<p>In C++, computation is expressed in an <i>expression</i> which is composed of <i>operators</i> and <i>operands</i>.</p>
+			
+			<p>Almost every expression produces a result, the result can then be stored in a variable or used as an operand of another expression.</p>
+
+			<h2>Arithmetic operators</h2>
+
+			<p>The <i><a href="http://en.cppreference.com/w/cpp/language/operator_arithmetic">arithmetic operators</a></i> can be used with <i>arithmetic types</i> such as <tt>int</tt> or <tt>double</tt> to perform arithmetic:</p>
 
 			<table>
 				<tr>
@@ -100,7 +43,7 @@ cout &lt;&lt; "Hello" &lt;&lt; " " &lt;&lt; "world!" &lt;&lt; "\n";
 				<tr>
 					<td>Unary plus</td>
 					<td><tt>+a</tt></td>
-					<td>Returns the positive value of <tt>a</tt></td>
+					<td>Returns the positive value of <tt>a<tt></td>
 				</tr>
 				<tr>
 					<td>Unary minus</td>
@@ -130,15 +73,59 @@ cout &lt;&lt; "Hello" &lt;&lt; " " &lt;&lt; "world!" &lt;&lt; "\n";
 				<tr>
 					<td>Modulo</td>
 					<td><tt>a % b</tt></td>
-					<td>Returns the remainder value of <tt>a</tt> divided by <tt>b</tt></td>
+					<td>For integral types only. Returns the remainder value of <tt>a</tt> divided by <tt>b</tt>.</td>
+			</table>
+
+			<p>All <i>unary operators</i> require one operand and all <i>binary operators</i> require two operands: typically a left operand and a right operand.</p>
+
+			<p>All of the above arithmetic operators create a temporary value, with the same type as the operand(s), as a result. The operands remain constant.</p>
+
+			<h2>Assignment operators</h2>
+
+			<p>The following <i>assignment operators</i> maintain the constancy of their right operand while assigning to their left operand, this implies that the left operand must be a variable:</p>
+
+			<table>
+				<tr>
+					<th>Operator name</th>
+					<th>Syntax</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>Simple assignment</td>
+					<td><tt>a = b</tt></td>
+					<td>Assigns the value of <tt>b</tt> to <tt>a</tt> and returns <tt>a</tt></td>
+				</tr>
+				<tr>
+					<td>Addition assignment</td>
+					<td><tt>a += b</tt></td>
+					<td>Assigns the result of <tt>a + b</tt> to <tt>a</tt> and returns <tt>a</tt></td>
+				</tr>
+				<tr>
+					<td>Subtraction assignment</td>
+					<td><tt>a -= b</tt></td>
+					<td>Assigns the result of <tt>a - b</tt> to <tt>a</tt> and returns <tt>a</tt></td>
+				<tr>
+					<td>Multiplication assignment</td>
+					<td><tt>a *= b</tt></td>
+					<td>Assigns the result of <tt>a * b</tt> to <tt>a</tt> and returns <tt>a</tt></td>
+				</tr>
+				<tr>
+					<td>Division assignment</td>
+					<td><tt>a /= b</tt></td>
+					<td>Assigns the result of <tt>a / b</tt> to <tt>a</tt> and returns <tt>a</tt></td>
+				</tr>
+				<tr>
+					<td>Modulo assignment</td>
+					<td><tt>a %= b</tt></td>
+					<td>Assigns the result of <tt>a % b</tt> to <tt>a</tt> and returns <tt>a</tt></td>
 				</tr>
 			</table>
 
-			<p>The arithmetic operators are usable on all arithmetic types which include <tt>int</tt> and <tt>double</tt>. Other types may support the use of certain arithmetic operators but the semantics of their use may entirely be different.</p>
+			<p><tt>a += b</tt> yields the same effect as <tt>a = a + b</tt>, and the same pattern is true of the other arithmetic assignment operators.</p>
 
-			<p>The unary plus and unary minus operators are known as <i>unary operators</i> because they each only require 1 operand. The other operators shown above are <i>binary operators</i> since they each require 2 operands.</p>
+			<h2>Increment/Decrement operators</h2>
 
-			<p>The following unary operators are used for incrementing/decrementing the value of a variable; unlike the above operators, these operators modify the variable for which they are used on.</p>
+			<p>The following unary operators are the <i>increment/decrement operators</i> and, like the assignment operators, they also assign to their operand:</p>
 
 			<table>
 				<tr>
@@ -152,29 +139,121 @@ cout &lt;&lt; "Hello" &lt;&lt; " " &lt;&lt; "world!" &lt;&lt; "\n";
 					<td>Increment <tt>a</tt> and return <tt>a</tt></td>
 				</tr>
 				<tr>
-					<td>Post-increment</td>
-					<td><tt>a++</tt></td>
-					<td>Increment <tt>a</tt> and return the old value of <tt>a</tt></td>
-				</tr>
-				<tr>
 					<td>Pre-decrement</td>
 					<td><tt>--a</tt></td>
 					<td>Decrement <tt>a</tt> and return <tt>a</tt></td>
 				</tr>
 				<tr>
+					<td>Post-increment</td>
+					<td><tt>a++</tt></td>
+					<td>Increment <tt>a</tt> and return the original value of <tt>a</tt></td>
+				</tr>
+				<tr>
 					<td>Post-decrement</td>
 					<td><tt>a--</tt></td>
-					<td>Decrement <tt>a</tt> and return the old value of <tt>a</tt></td>
+					<td>Decrement <tt>a</tt> and return the original value of <tt>a</tt></td>
 				</tr>
 			</table>
 
-			<h1>Operator precedence</h1>
+			<p>The expression <tt>++a</tt> is exactly equivalent to <tt>a += 1</tt>, and the expression <tt>--a</tt> is exactly equivalent to <tt>a -= 1</tt></p>
 
-			<p>The rules of <a href="http://en.cppreference.com/w/cpp/language/operator_precedence"><i>operator precedence</i></a> in C++ determine the order of the evaluation of subexpressions within an expression.</p>
+			<h2>Precedence and associativity</h2>
 
-			<p>Generally: increment/decrement expressions are evaluated first, multiplication/division/modulo expressions are evaluated second, addition/subtraction expressions are evaluated third, and assignment is evaluated last.</p>
+			<p>Every operator has a <i><a href="http://en.cppreference.com/w/cpp/language/operator_precedence">precedence</a></i> and <i>associativity</i> which both determine the order in which operators and their operands are analyzed by the compiler (which can be overridden when parenthesis are used to group expressions). An expression such as <tt>a = b + c * d</tt> is analyzed as <tt>(a) = ((b) + ((c) * (d)))</tt>.</p>
 
-			<p>The <i>associativity</i> of an operator determines the order of the evaluation of an operator's operands. The associativity of an operator is either <i>Left-to-right</i> or <i>Right-to-left</i>. For example, the expression <tt>a + b</tt> has Left-to-right associativity since <tt>a</tt> is evaluated first and then <tt>b</tt>. The associativity of <tt>a = b</tt> is Right-to-left since <tt>b</tt> is evaluated first and then <tt>a</tt>.</p>
-		</div>
+			<p>The associativity of an operator determines the direction in which that operator's operands are analyzed. An expression like <tt>a + b</tt> has Left-to-right associativity while <tt>a = b</tt> has Right-to-left associativity.</p>
+
+			<p>The precedence of an operator is a particular ranking of that operator, determining when that operator's operands become bound to it.</p>
+
+			<p>Most of this is common-sense, when it can be derived that:</p>
+
+			<ol>
+				<li>Increment/decrement expressions are analyzed first</li>
+				<li>Unary plus/minus expressions are analyzed second</li>
+				<li>Addition/subtraction expressions are analyzed third</li>
+				<li>Multiplication/division/modulo expressions are analyzed fourth</li>
+				<li>Simple assignment expressions are analyzed fifth</li>
+				<li>Addition/subtraction assignment expressions are analyzed sixth</li>
+				<li>Multiplication/division/modulo assignment expressions are analyzed seventh</li>
+			</ol>
+
+			<p>From these rules, the statements: <tt>int x = 3; cout &lt;&lt; --x + 2 * -5; </tt> print <tt>-8</tt>.</p>
+
+			<p>One interesting fact to note about C++ is that there are no negative literals, only positive literals with the unary minus operator applied to make the resulting value negative.</p>
+
+			<h2>The function call operator</h2>
+
+			<p>The arithmetic operators are not the only means of performing computation, C++ provides a collection of predefined math functions, most of them require only 1 argument, some require 2.</p>
+
+			<p>The function call operator takes the form of <tt>F( A1, A2, A3, ... )</tt> where <tt>F</tt> is the name of a function and <tt>A1, A2, A3, ...</tt> is a possibly empty list of expressions to be used as <i>arguments</i> for that function. The number of arguments and the type of each argument value must be compatible with that function's parameter list; in other words, one must know how to properly use that function.</p>
+
+			<p>The following table shows possible expressions that use some of the <a href="http://en.cppreference.com/w/cpp/numeric/math"><i>common mathematical functions</i></a> of C++:</p>
+
+			<table>
+				<tr>
+					<th>Expression</th>
+					<th>Return value</th>
+				</tr>
+				<tr>
+					<td><tt>abs(x)</tt></td>
+					<td>Absolute value of <tt>x</tt></td>
+				</tr>
+				<tr>
+					<td><tt>exp(x)</tt></td>
+					<td><i>e</i> raised to the power of <tt>x</tt></td>
+				</tr>
+				<tr>
+					<td><tt>log(x)</tt></td>
+					<td>Natural logarithm of <tt>x</tt></td>
+				</tr>
+				<tr>
+					<td><tt>log10(x)</tt></td>
+					<td>Base-10 logarithm of <tt>x</tt></td>
+				</tr>
+				<tr>
+					<td><tt>sqrt(x)</tt></td>
+					<td>Square root of <tt>x</tt></td>
+				</tr>
+				<tr>
+					<td><tt>sin(x)</tt></td>
+					<td>Sine of <tt>x</tt></td>
+				</tr>
+				<tr>
+					<td><tt>cos(x)</tt></td>
+					<td>Cosine of <tt>x</tt></td>
+				</tr>
+				<tr>
+					<td><tt>tan(x)</tt></td>
+					<td>Tangent of <tt>x</tt></td>
+				</tr>
+				<tr>
+					<td><tt>asin(x)</tt></td>
+					<td>Arc sine of <tt>x</tt></td>
+				</tr>
+				<tr>
+					<td><tt>acos(x)</tt></td>
+					<td>Arc cosine of <tt>x</tt></td>
+				</tr>
+				<tr>
+					<td><tt>atan(x)</tt></td>
+					<td>Arc tangent of <tt>x</tt></td>
+				</tr>
+				<tr>
+					<td><tt>pow(x, y)</tt></td>
+					<td><tt>x</tt> raised to the power of <tt>y</tt></td>
+				</tr>
+				<tr>
+					<td><tt>4 * atan(1)</tt></td>
+					<td><i>Pi</i> constant</td>
+				</tr>
+				<tr>
+					<td><tt>exp(1)</tt></td>
+					<td><i>E</i> constant</td>
+				</tr>
+			</table>
+
+			<p>With the exception of <tt>abs</tt>, the above functions will return a value of type <tt>double</tt> when the supplied argument(s) are of type <tt>int</tt> or <tt>double</tt>.</p>
+
+
 	</body>
 </html>
