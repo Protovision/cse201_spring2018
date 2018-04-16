@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Input/Output</title>
+		<meta name="author" content="Mark Swoope">
+		<meta name="description" content="C++ programming">
+		<link rel="stylesheet" type="text/css" href="../main.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="../index.html">Welcome</a></li>
+			<li><a href="compsoft.html">Computers and Software</a></li>
+			<li><a href="cpp.html">C++ programming</a></li>
+			<li><a href="vars.html">Variables, Types, and Values</a></li>
+			<li><a href="expr.html">Computation</a></li>
+			<li><a class="active" href="#">Input/Output</a></li>
+			<!--
+			<li><a href="#">Constness and Conversions</a></li>
+			<li><a href="#">Functions</a></li>
+			<li><a href="#">Selection and conditions</a></li>
+			<li><a href="#">Debugging and Documentation</a></li>
+			<li><a href="#">Iteration and Sequence containers</a></li>
+			<li><a href="#">Classes</a></li>
+			-->
+		</ul>
+
+		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+			<h1>Input/Output</h1>
+			
+			<p>Input/Output is what I/O stands for, it simply refers to data transmission involving a computer. Related to this is the concept of a <i>stream</i> which is an interface for transmitting data in an ordered sequence.</p>
+
+			<p>Many operating systems provide <i>standard streams</i> to every <i>process</i> (an executing program): <i>standard input</i>, <i>standard output</i>, and <i>standard error</i>.</p>
+
+			<p>C++ provides access to standard input through <tt>cin</tt>, standard output through <tt>cout</tt>, and standard error through <tt>cerr</tt>.</p>
+
+			<p>Unless redirection is used, a program executed through an interactive command shell will have it's standard streams associated with the text terminal; that is: keyboard input will be sent to standard input, and standard output and standard error will be sent to the terminal display.</p>
+
+			<p>C++ mainly distinguishes between 3 types of streams. The type for <tt>cin</tt> is <tt>istream</tt> (which stands for input stream), and the type for <tt>cout</tt> and <tt>cerr</tt> is <tt>ostream</tt> (which stands for output stream). The 3rd type of stream C++ supports is <tt>iostream</tt> (input/output stream).</p>
+
+			<p>An input stream only allows one to receive data from it while an output stream only allows one to send data to it, an input/output stream allows both.</p>
+
+			<p>The following terms are roughly synonomous with "input": read, receive, extract, scan, get.</p>
+
+			<p>The following terms are roughly synonomous with "output": write, send, insert, print, put.</p>
+
+			<p>There are 2 operators one can use with a C++ stream depending on it's type:</p>
+
+			<table>
+				<tr>
+					<th>Operator name</th>
+					<th>Syntax</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>Stream insertion</td>
+					<td><tt>s &lt;&lt; x</tt></td>
+					<td>Inserts formatted data from the value of <tt>x</tt> into the <tt>ostream</tt> named <tt>s</tt></td>
+				<tr>
+					<td>Stream extraction</td>
+					<td><tt>s &gt;&gt; x</tt></td>
+					<td>Extracts formatted data from the <tt>istream</tt> named <tt>s</tt> into the variable named <tt>x</tt></td>
+				</tr>
+			</table>
+
+			<p>The stream insertion and stream extraction operators convert any data to/from text data before transmitting it.</p>
+
+
+			<p>This simple code block scans 3 integer values and prints the sum of those values:</p>
+
+			<code>
+int a, b, c;
+cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+cout &lt;&lt; a + b + c &lt;&lt; endl;
+			</code>
+
+			<p>The stream extraction operator is sufficient for scanning values of type <tt>int</tt> and <tt>double</tt>; multiple input items for these types are delimited by <i>whitespace</i> (space, tab, newline, etc.).</p>
+
+			<p>When scanning a character there are two ways one can do this:</p>
+
+			<table>
+				<tr>
+					<th>Expression</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><tt>cin &gt;&gt; c</tt></td>
+					<td>Extracts the next <b>non-whitespace</b> character from <tt>cin</tt> and assigns it to the <tt>char</tt> variable named <tt>c</tt></td>
+				</tr>
+				<tr>
+					<td><tt>cin.get(c)</tt></td>
+					<td>Extracts the next character from <tt>cin</tt> and assigns it to the <tt>char</tt> variable named <tt>c</tt></td>
+				</tr>
+			</table>
+
+			<p>When scanning a string (a sequence of characters), there are two ways one can do this:</p>
+
+			<table>
+				<tr>
+					<th>Expression</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><tt>cin &gt;&gt; s</tt></td>
+					<td>Extracts the next word (a sequence of non-whitespace characters) from <tt>cin</tt> and assigns them to the <tt>string</tt> variable named <tt>s</tt></td>
+				</tr>
+				<tr>
+					<td><tt>getline(cin, s)</tt></td>
+					<td>Extracts the next line (a sequence of characters up to but not including <tt>'\n'</tt> or <tt>"\r\n"</tt>) from <tt>cin</tt> and assigns them to the <tt>string</tt> variable named <tt>s</tt></td>
+				</tr>
+			</table>
+
+			<p>All of these Input/Output expressions return the stream variable that they operated on.</p>
+
+			<p>The special identifier <tt>endl</tt> is used for insertting a new line into an output stream, it is roughly equivalent to inserting the character <tt>'\n'</tt>.</p>
+
+			<p>One important thing you will realize is that the terminal is, by default, <i>line oriented</i>. So even though the stream extraction operator delimits it's input by any whitespace, data from the keyboard does not actually get sent to the program's standard input until a new line is entered (the user presses Enter).</p>
+		</div>
+	</body>
+</html>
