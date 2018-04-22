@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Input/Output</title>
+		<meta name="author" content="Mark Swoope">
+		<meta name="description" content="C++ programming">
+		<link rel="stylesheet" type="text/css" href="../main.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="../index.html">Welcome</a></li>
+			<li><a href="compsoft.html">Computers and Software</a></li>
+			<li><a href="cpp.html">C++ programming</a></li>
+			<li><a href="vars.html">Variables, Types, and Values</a></li>
+			<li><a href="expr.html">Computation</a></li>
+			<li><a href="io.html">Input/Output</a></li>
+			<li><a class="active" href="#">Conversions</a></li>
+			<!--
+			<li><a href="#">Functions</a></li>
+			<li><a href="#">Selection and conditions</a></li>
+			<li><a href="#">Debugging and Documentation</a></li>
+			<li><a href="#">Iteration and Sequence containers</a></li>
+			<li><a href="#">Classes</a></li>
+			-->
+		</ul>
+
+		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+		
+		<h1>Conversions</h1>
+
+		<h2>Implicit conversion</h2>
+
+		<p>A conversion refers to a value of one type being produced that corresponds to a value of another type. For example, the <tt>int</tt> value <tt>3</tt> can be converted to the <tt>double</tt> value <tt>3.0</tt>. Conversions between arithmetic types are usually <a href="http://en.cppreference.com/w/cpp/language/implicit_conversion"><i>implicit conversions</i></a> which means that the conversion happens automatically without any additional code.</p>
+
+		<p>The following expressions all perform implicit conversion before the operator is executed:</p>
+
+		<table>
+			<tr>
+				<th>Expression</th>
+				<th>Implicit conversions</th>
+			</tr>
+			<tr>
+				<td><tt>double n = 0</tt></td>
+				<td><tt>0</tt> &rarr; <tt>0.0</tt></td>
+			</tr>
+			<tr>
+				<td><tt>int n = 3.25</tt></td>
+				<td><tt>3.25</tt> &rarr; <tt>3</tt></td>
+			</tr>
+
+			<tr>
+				<td><tt>2 * 4.51</tt></td>
+				<td><tt>2</tt> &rarr; <tt>2.0</tt></td>
+			</tr>
+			<tr>
+				<td><tt>asin(1)</tt></td>
+				<td><tt>1</tt> &rarr; <tt>1.0</tt></td>
+			</tr>
+		</table>
+
+		<p>For arithmetic operators (such as addition and multiplication), the general rule is that the integral value will be converted to a floating-point value if either operand is a floating-point value; this is part of what's known as the <a href="http://en.cppreference.com/w/cpp/language/operator_arithmetic#Conversions"><i>usual arithmetic conversions</i></a>.</p>
+
+		<p>For any assignment or function call where the supplied value is not of the same type as the parameter or variable being assigned to, then an implicit conversion will be performed if the two types are compatible.</p>
+
+		<p>An integral value can usually be converted to a floating-point value without losing any information; however, a conversion from a floating-point value to an integral value will result in the fractional part of the value being discarded.</p>
+
+		<h2>Explicit conversion</h2>
+
+		<p>Sometimes the behavior of an implicit conversion can be undesirable; if that is the case, then an <i>explicit conversion</i> can be used instead:</p>
+
+		<table>
+			<tr>
+				<th>Expression</th>
+				<th>Resulting value</th>
+			</tr>
+			<tr>
+				<td><tt>2 * int(2.4)</tt></td>
+				<td><tt>4</tt></td>
+			</tr>
+			<tr>
+				<td><tt>double(5) + 1</tt></td>
+				<td><tt>6.0</tt></td>
+			</tr>
+			<tr>
+				<td><tt>int(4 * atan(1))</tt></td>
+				<td><tt>3</tt></td>
+			</tr>
+		</table>
+
+		<p>The explicit conversion notation in the form of <tt>T(E)</tt>, where <tt>T</tt> is a type and <tt>E</tt> is an expression, is called <i>functional cast notation</i>: it attempts to produce a new value of the specified type by intepreting the value of the specified expression.</p>
+
+		<p>An alternative to the functional cast notation is the <i>C-style cast notation</i>, it's form is <tt>(T)E</tt>. For example, the expression <tt>(int)3.5</tt> results in the value <tt>3</tt>.</p>
+
+		<p>Both forms of cast notation have the same effect, it is your preference on which to use. When using either cast notation it is said that this type is being "casted to" this other type; therefore "casting" and "converting" are synonomous terms.</p>
+
+		<h2>Standard conversions</h2>
+
+		<p>There are many standard conversions in C++, they are considered during implicit conversion; some of them are described in the following table:</p>
+
+		<!-- bool, char, int, double -->
+		<table>
+			<tr>
+				<th>Conversion</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><tt>bool</tt> &rarr; <tt>char</tt></td>
+				<td><tt>false</tt> &rarr; <tt>'\x00'</tt>, <tt>true</tt> &rarr; <tt>'\x01'</tt></td>
+			</tr>
+			<tr>
+				<td><tt>bool</tt> &rarr; <tt>int</tt></td>
+				<td><tt>false</tt> &rarr; <tt>0</tt>, <tt>true</tt> &rarr; <tt>1</tt></td>
+			</tr>
+			<tr>
+				<td><tt>bool</tt> &rarr; <tt>double</tt></td>
+				<td><tt>false</tt> &rarr; <tt>0.0</tt>, <tt>true</tt> &rarr; <tt>1.0</tt></td>
+			</tr>
+			<tr>
+				<td><tt>char</tt> &rarr; <tt>bool</tt></td>
+				<td><tt>'\x00'</tt> &rarr; <tt>false</tt>, <tt>true</tt> otherwise</td>
+			</tr>
+			<tr>
+				<td><tt>char</tt> &rarr; <tt>int</tt></td>
+				<td>See the <a href="http://en.cppreference.com/w/cpp/language/ascii">ASCII Chart</a></td>
+			</tr>
+			<tr>
+				<td><tt>char</tt> &rarr; <tt>double</tt></td>
+				<td>See the <a href="http://en.cppreference.com/w/cpp/language/ascii">ASCII Chart</a></td>
+			</tr>
+			<tr>
+				<td><tt>int</tt> &rarr; <tt>bool</tt></td>
+				<td><tt>0</tt> &rarr; <tt>false</tt>, <tt>true</tt> otherwise</td>
+			</tr>
+			<tr>
+				<td><tt>int</tt> &rarr; <tt>char</tt></td>
+				<td>See the <a href="http://en.cppreference.com/w/cpp/language/ascii">ASCII Chart</a></td>
+			</tr>
+			<tr>
+				<td><tt>int</tt> &rarr; <tt>double</tt></td>
+				<td>Same value as if <tt>.0</tt> was appended to the decimal literal</td>
+			</tr>
+			<tr>
+				<td><tt>double</tt> &rarr; <tt>bool</tt></td>
+				<td><tt>0.0</tt> &rarr; <tt>false</tt>, <tt>true</tt> otherwise</td>
+			</tr>
+			<tr>
+				<td><tt>double</tt> &rarr; <tt>char</tt></td>
+				<td>See the <a href="http://en.cppreference.com/w/cpp/language/ascii">ASCII Chart</a></td>
+			</tr>
+			<tr>
+				<td><tt>double</tt> &rarr; <tt>int</tt></td>
+				<td>Integral part in resulting value, fractional part gets discarded.</td>
+			</tr>
+		</table>
+
+		<h2>Conversions with strings</h2>
+
+		<p>Starting with C++11, the following functions were introduced to convert strings to and from arithmetic types:</p>
+
+		<table>
+			<tr>
+				<th>Expression</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><tt>to_string(v)</tt></td>
+				<td>Returns a <tt>string</tt> value representing the integral or floating-point value <tt>v</tt></td>
+			</tr>
+			<tr>
+				<td><tt>stoi(s)</tt></td>
+				<td>Returns an <tt>int</tt> value representing the <tt>string</tt> value <tt>s</tt></td>
+			</tr>
+			<tr>
+				<td><tt>stod(s)</tt></td>
+				<td>Returns a <tt>double</tt> value representing the <tt>string</tt> value <tt>s</tt></td>
+			</tr>
+		</table>
+	</body>
+</html>
