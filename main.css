@@ -11,7 +11,8 @@ ul.nav {
 	margin: 0;
 	padding: 0;
 	width: 25%;
-	background-color: #e3e3e3;
+	/*background-color: #e3e3e3; */
+	background-color: #14324d; /*#16344f;*/ /*#0065bd; */
 	position: fixed;
 	height: 100%;
 	overflow: auto;
@@ -19,18 +20,20 @@ ul.nav {
 
 ul.nav li a {
 	display: block;
-	color: #000;
+	/*color: #000; */
+	color: #ffffff;
 	padding: 8px 16px;
 	text-decoration: none;
 }
 
 ul.nav li a.active {
-	background-color: #3f7f3f;
+	/* background-color: #3f7f3f; */
+	background-color: #0065bd; /*#003766;*/ /* #00549e; */ /* #0065bd; */
 	color: white;
 }
 
 ul.nav li a:hover:not(.active) {
-	background-color: #555;
+	background-color: #666769; /*#555;*/
 	color: white;
 }
 
