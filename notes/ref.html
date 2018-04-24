@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Constness and References</title>
+		<meta name="author" content="Mark Swoope">
+		<meta name="description" content="C++ programming">
+		<link rel="stylesheet" type="text/css" href="../main.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="../index.html">Welcome</a></li>
+			<li><a href="compsoft.html">Computers and Software</a></li>
+			<li><a href="cpp.html">C++ programming</a></li>
+			<li><a href="vars.html">Variables, Types, and Values</a></li>
+			<li><a href="expr.html">Computation</a></li>
+			<li><a href="io.html">Input/Output</a></li>
+			<li><a href="conv.html">Conversions</a></li>
+			<li><a class="active" href="ref.html">Constness and references</a></li>
+			<!--
+			<li><a href="func.html">Functions</a></li>
+			<li><a href="#">Selection and conditions</a></li>
+			<li><a href="#">Debugging and Documentation</a></li>
+			<li><a href="#">Iteration and Sequence containers</a></li>
+			<li><a href="#">Classes</a></li>
+			-->
+		</ul>
+
+		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+		
+		<h1>Constness</h1>
+
+		<p>A variable can be declared as <i>constant</i> which disallows it's initial value to be changed after the declaration:</p>
+
+		<code>
+const double pi = 4 * atan(1);
+		</code>
+
+		<p>The type qualifier <a href="http://en.cppreference.com/w/cpp/language/cv"><tt>const</tt></a>, combined with any other type, modifies the type of the variable in a way that disallows any assignment expressions on that variable. An initializer (such as an assignment operator followed by an initial value) should always be used after declaring a variable as constant.</p>
+
+		<p>A constant variable is useful if the particular value it stores will never change and would otherwise be cumbersome to express as a literal for reasons such as: a high usage frequency, the literal is too lengthy, the literal is too difficult to remember. Now a non-constant variable satisfies all these needs, but it is good practice to make some things explicit and to not require more functionality out of a variable or object than what you really need.</p>
+
+		<p>Even though a type such as <tt>const int</tt> is technically different from <tt>int</tt>, they are still compatible in one direction such that you can assign a value of type <tt>const int</tt> to a variable of type <tt>int</tt>; no conversion happens.</p>
+
+		<p>In fact, the type of any literal is a constant of that type. For example, the literal <tt>123</tt> is more specifically of type <tt>const int</tt> rather than just <tt>int</tt>. This makes sense because one cannot take a literal and place it on the left-hand side of an assignment operator.</p>
+
+		<h1>References</h1>
+
+		<p>Another kind of entity that must be initialized upon declaration is a <a href="http://en.cppreference.com/w/cpp/language/reference#Lvalue_references"><i>reference</i></a>.</p>
+
+		<p>A reference does not store a value like a variable does, instead it refers to an existing variable. Observe the following code:</p>
+
+		<code>
+int x = 4;
+int&amp; r = x;
+r = 5;
+cout &lt;&lt; x &lt;&lt; endl;
+x = 6;
+cout &lt;&lt; r &lt;&lt; endl;
+		</code>
+
+		<p>As one can see, the variable <tt>x</tt> and the reference <tt>r</tt> are associated with the same storage and they become indistinguishable from each other after declaration.</p>
+
+		<p>From the whole code, it is known that <tt>x</tt> stores an integer value and <tt>r</tt> is said to be a "reference to" <tt>x</tt>, the type of <tt>r</tt> is called "reference to int". All uses of <tt>r</tt> after reference declaration evaluate the same as if <tt>x</tt> was used instead.</p>
+
+		<p>One can also declare a reference as a reference to a constant:</p>
+
+		<code>
+int x = 0;
+const int&amp; r = x;
+		</code>
+
+		<p>In which case, the reference can only be evaluated but not assigned to. It can still be said that <tt>r</tt> is a "reference to constant int" even though the object it refers to is not actually constant, but through this reference it is constant.</p>
+
+		<p>A reference must be initialized with a variable; after which that variable is said to be "bound" to that reference for the duration of that reference's lifetime. References cannot be "rebound" to another variable after declaration. A reference does not necessarily occupy storage and thus does not store a value, a reference always refers to an existing region of storage (such as a variable); therefore a reference cannot be called a variable in the strictest sense.</p>
+
+		<p>In the next page, you will see why references are useful. They are useful for sharing data across groups of code without the unnecessary copying of data.</p>
+	</body>
+</html>
