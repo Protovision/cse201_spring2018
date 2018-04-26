@@ -52,7 +52,7 @@ public:
 	void assign(size_type count, const T& value)
 	{
 		simple_vector temp;
-		
+	
 		temp.reallocate_and_assign(count, uptr, uptr);
 		temp.uptr = std::uninitialized_fill_n(temp.uptr, count, value);
 		swap(temp);

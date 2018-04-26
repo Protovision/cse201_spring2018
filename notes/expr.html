@@ -170,14 +170,14 @@
 			<p>Most of this is common-sense, when it can be derived that:</p>
 
 			<ol>
-				<li>Increment/decrement expressions are analyzed first</li>
-				<li>Unary plus/minus expressions are analyzed second</li>
-				<li>Addition/subtraction expressions are analyzed third</li>
-				<li>Multiplication/division/modulo expressions are analyzed fourth</li>
-				<li>Simple assignment expressions are analyzed fifth</li>
-				<li>Addition/subtraction assignment expressions are analyzed sixth</li>
-				<li>Multiplication/division/modulo assignment expressions are analyzed seventh</li>
+				<li>Post-increment, Post-decrement and function call expressions are analyzed first</li>
+				<li>Pre-increment, Pre-decrement, unary minus, and unary plus expressions are analyzed second</li>
+				<li>Multiplication, division, and modulo expressions are analyzed third</li>
+				<li>Addition and subtraction expressions are analyzed fourth</li>
+				<li>Simple assignment and compound assignment expressions are analyzed fifth</li>
 			</ol>
+
+			<p><b>Note:</b> This list was corrected on 4/25/18, sorry for any inconveniences.</p>
 
 			<p>From these rules, the statements: <tt>int x = 3; cout &lt;&lt; --x + 2 * -5; </tt> print <tt>-8</tt>.</p>
 
