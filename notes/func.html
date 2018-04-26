@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Functions</title>
+		<meta name="author" content="Mark Swoope">
+		<meta name="description" content="C++ programming">
+		<link rel="stylesheet" type="text/css" href="../main.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="../index.html">Welcome</a></li>
+			<li><a href="compsoft.html">Computers and Software</a></li>
+			<li><a href="cpp.html">C++ programming</a></li>
+			<li><a href="vars.html">Variables, Types, and Values</a></li>
+			<li><a href="expr.html">Computation</a></li>
+			<li><a href="io.html">Input/Output</a></li>
+			<li><a href="conv.html">Conversions</a></li>
+			<li><a href="ref.html">Constness and references</a></li>
+			<li><a class="active" href="#">Functions</a></li>
+			<!--
+			<li><a href="#">Selection and conditions</a></li>
+			<li><a href="#">Debugging and Documentation</a></li>
+			<li><a href="#">Iteration and Sequence containers</a></li>
+			<li><a href="#">Classes</a></li>
+			-->
+		</ul>
+
+		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+		
+		<h1>Functions</h1>
+			
+		<p>As a program grows in complexity, it becomes desirable to reduce this complexity by organizing it's code into several <a href="http://en.cppreference.com/w/cpp/language/function"><i>functions</i></a>. In computer science, a function is a sequence of statements; functions are useful for preventing code duplication as well as organizing the program in a logical and understandable way.</p>
+
+		<p>In C++, a function is called a function. In other programming languages, it might be called "subroutine", "procedure", or "subprocedure"; these terms generally refer to the same meaning.</p>
+
+		<p>In C++, a function is defined in the form:</p>
+
+		<ul>
+			<li><tt>R F(P) B</tt></li>
+			<ul>
+				<li><tt>R</tt>: the return type</li>
+				<li><tt>F</tt>: the function name</li>
+				<li><tt>P</tt>: the parameter list: <tt>T1 P1, T2, P2, ...</tt></li>
+				<li><tt>B</tt>: the function body: <tt>{ S1 S2 ... }</tt></li>
+			</ul>
+		</ul>
+
+		<p>The return type is the type of the <i>return value</i> of the function, this is also generally known as the output of the function.</p>
+
+		<p>The function name is the identifier for this function.</p>
+
+		<p>The parameter list is a list of variable declarations delimited by commas; each variable in the parameter list is known as a <i>parameter</i>. When the function gets <i>called</i>, each parameter will be initialized to an <i>argument</i> that was supplied during the function call. The parameter list is also generally known as the input to the function.</p>
+
+		<p>The function body is a block, that is, a brace-enclosed sequence of statements; these statements will have access to the parameters from the parameter list when the function gets called and any return statement terminates the function call and provides the return value.</p>
+
+		<p>The simplest function to illustrate is a function that has an empty return value, empty parameter list, and an empty function body
+
+		<code>
+void f() {}
+		</code>
+
+		<p>This function takes no input and produces no output or <i>side effects</i>. A side effect is any observable result or behavior of the function other than it's return value.</p>
+
+		<p>The type <tt>void</tt> can be specified as a return type to indicate that there is no return value of the function; <tt>void</tt> represents an empty value or the absence of a value. A function with a <tt>void</tt> return type may still have a non-empty parameter list or non-empty function body.</p>
+
+		<p>Here are 2 more useful functions that do have a return value:</p>
+
+		<code>
+double pi()
+{
+	return 4 * atan(1);
+}
+
+double e()
+{
+	return exp(1);
+}
+		</code>
+
+		<p>Now within a different function, if one wanted to find the area of a circle with radius <tt>r</tt>, then the expression would be: <tt>pi() * r * r</tt>. As you already know, a function call follows the form <tt>F(A)</tt> where <tt>F</tt> is the function name and <tt>A</tt> is either empty or it is a list of arguments to assign to that function's parameters.</p>
+
+		<p>Since <tt>pi()</tt> only has a single return statement, then that expression would be equivalent to <tt>(4 * atan(1)) * r * r</tt>.</p>
+
+		<p>Of course, another function can be defined to find the area of a circle, this one having one parameter:</p>
+
+		<code>
+double circle_area(double r)
+{
+	return pi() * r * r;
+}
+		</code>
+
+		<p>Now the expression <tt>circle_area(4.0)</tt> finds the area of a circle with a radius of <tt>4.0</tt> (disregarding physical units). The value <tt>4.0</tt> is said to be the argument for the parameter named <tt>r</tt> in this function.</p>
+
+		<p>Here is another function that is used simply for it's side effects; it prints a horizontal line:</p>
+
+		<code>
+void hr()
+{
+	cout &lt;&lt; "=====================================================================" &lt;&lt; endl;
+}
+		</code>
+
+		<p>This function is quite ugly, it would more sanely be implemented using some sort of loop which you may or may not already be familiar with:</p>
+
+		<code>
+void hr()
+{
+	for (int i = 0; i &lt; 79; ++i)
+		cout &lt;&lt; '=';
+	cout &lt;&lt; endl;
+}
+		</code>
+
+		<p>It uses a line length of 79 and a fill character of <tt>'='</tt>, it would be nice however to allow the user to override these values in a parameter list:</p>
+
+		<code>
+void hr(char fill, int length)
+{
+	for (int i = 0; i &lt; length; ++i)
+		cout &lt;&lt; fill;
+	cout &lt;&lt; endl;
+}
+		</code>
+
+		<p>However, this implementation makes the function call more difficult since now instead of <tt>hr()</tt>, one must call it with <tt>hr('=', 79)</tt>. This is where <i>default arguments</i> can be used:</p>
+
+		<code>
+void hr(char fill = '=', int length = 79)
+{
+	for (int i = 0; i &lt; length; ++i)
+		cout &lt;&lt; fill;
+	cout &lt;&lt; endl;
+}
+		</code>
+
+		<p>If no argument is supplied to a parameter, then it's default value will be used as an argument; therefore <tt>hr</tt> can be called like <tt>hr()</tt>, <tt>hr('-')</tt>, or <tt>hr('#', 40)</tt>.</p>
+
+		<h2>References as parameters</h2>
+
+		<p>A reference can be used as an argument to a function, allowing that function to modify the variable for which that reference refers to (unless it is a reference to a constant).</p>
+
+		<p>The following program uses a function that performs integer division, storing the quotient and remainder results into 2 variables that are each specified as a reference to int argument.</p>
+		<code>
+#include "std.h"
+
+void divide_int(int x, int y, int&amp; quot, int&amp; rem)
+{
+	quot = x / y;
+	rem = x % y;
+}
+
+int main()
+{
+	int a, b, q, r;
+	cout &lt;&lt; "Enter 2 integers: ";
+	cin &gt;&gt; a &gt;&gt; b;
+	divide_int(a, b, q, r);
+	cout &lt;&lt; "After division, quotient is " &lt;&lt; q &lt;&lt; " and remainder is "  &lt;&lt; r &lt;&lt; endl;
+}
+		</code>
+
+		<p>The parameters <tt>quot</tt> and <tt>rem</tt> are <i>referenced initialized</i> to <tt>q</tt> and <tt>r</tt>, respectively. Any assignment to <tt>quot</tt> or <tt>rem</tt> within the <tt>divide_int</tt> function results in <tt>q</tt> or <tt>r</tt> being assigned, respectively. The argument supplied to any reference parameter must be a variable, using a literal or an expression that produces a temporary value will not compile.</p>
+	</body>
+</html>
