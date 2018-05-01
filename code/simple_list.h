@@ -147,13 +147,7 @@ public:
 
 	void clear()
 	{
-		node *node_ptr, *after;
-		for (node_ptr = begin_node_ptr; node_ptr != &end_node;
-						node_ptr = after) {
-			after = node_ptr->after;
-			delete node_ptr;
-		}
-		sz = 0;
+		while (!empty()) pop_back();
 	}
 
 	iterator insert(iterator pos, const T& value)
