@@ -27,5 +27,114 @@
 
 		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
 
+		<h1>Conditions</h1>
+
+		<p>While the arithmetic operators perform computation mainly with values of <tt>int</tt> or <tt>double</tt>, the <a href="http://en.cppreference.com/w/cpp/language/operator_logical"><i>logical operators</i></a> deal with values of <tt>bool</tt>.</p>
+
+		<p>There are three logical operators in C++: <i>Logical Not</i>, <i>Logical And</i>, and <i>Logical Inclusive Or</i>. These operators perform a logical computation in contradistinction to a mathematical computation; the operands to these logical operators are implicitly converted to <tt>bool</tt>, if necessary, and  the result of a logical operation is a value of <tt>bool</tt>.</p>
+
+		<table>
+			<tr>
+				<th>Operator name</th>
+				<th>Usage</th>
+				<th>Result</th>
+			</tr>
+			<tr>
+				<td>Logical Not</td>
+				<td><tt>!a</tt></td>
+				<td><tt>true</tt> if <tt>a</tt> is <tt>false</tt>, <tt>false</tt> otherwise.</td>
+			</tr>
+			<tr>
+				<td>Logical And</td>
+				<td><tt><tt>a &amp;&amp; b</tt></td>
+				<td><tt>true</tt> if <tt>a</tt> and <tt>b</tt> are both <tt>true</tt>, <tt>false</tt> otherwise</td>
+			</tr>
+			<tr>
+				<td>Logical Or (or more precisely, Logical Inclusive Or)</td>
+				<td><tt>a || b</tt></td>
+				<td><tt>false</tt> if <tt>a</tt> and <tt>b</tt> are both <tt>false</tt>, <tt>true</tt> otherwise</td>
+			</tr>
+		</table>
+
+		<p>An expression whose result is <tt>bool</tt> is generally known as a <i>condition</i>, especially within the context of a statement or parameter that expects a boolean value.</p>
+
+		<p>The operands to the logical operators are typically subexpressions that are also conditions while using one of the <a href="http://en.cppreference.com/w/cpp/language/operator_comparison"><i>comparision operators</i></a>:</p>
+
+		<table>
+			<tr>
+				<th>Operator name</th>
+				<th>Usage</th>
+			</tr>
+			<tr>
+				<td>Equal to</td>
+				<td><tt>a == b</tt></td>
+			</tr>
+			<tr>
+				<td>Not equal to</td>
+				<td><tt>a != b</tt></td>
+			</tr>
+			<tr>
+				<td>Less than</td>
+				<td><tt>a &lt; b</tt></td>
+			</tr>
+			<tr>
+				<td>Greater than</td>
+				<td><tt>a &gt; b</tt></td>
+			</tr>
+			<tr>
+				<td>Less than or equal to</td>
+				<td><tt>a &lt;= b</tt></td>
+			</tr>
+			<tr>
+				<td>Greater than or equal to</td>
+				<td><tt>a &gt;= b</tt></td>
+			</tr>
+		</table>
+
+		<p>These operators can be used between arithmetic types, the result is <tt>true</tt> or <tt>false</tt> depending on what kind of comparison is used. What each particular comparison operator does is common sense, for example <tt>a &lt; b</tt> returns <tt>true</tt> if <tt>a</tt> is less than <tt>b</tt> and <tt>false</tt> otherwise.</p>
+
+		<p>The comparison operators can also be used with two <tt>string</tt> values, in which case the operator performs a <a href="http://en.cppreference.com/w/cpp/algorithm/lexicographical_compare"><i>lexicographical comparison</i></a> rather than an arithmetical comparision; one can think of string comparisons as operating under the same rules of the ordering in which words or phrases show up in a dictionary: the comparison is mostly dependent on alphabetical ordering.</p>
+
+		<h1>Selection statements</h1>
+
+		<p>A selection statement is a statement that selects the next statement(s) to execute depending on a condition. The first and most common one you may have already seen:</p>
+
+		<code>
+int x;
+cin &gt;&gt; x;
+if (x % 2 == 0) {
+	cout &lt;&lt; "Even\n";
+} 
+		</code>
+		
+		<p>Here, "Even" will be printed if a user-entered integer is disivisble by 2. An optional <i>else clause</i> may also be provided to an <i>if statement</i>:</p>
+		<code>
+if (x % 2 == 0) {
+	cout &lt;&lt; "Even\n";
+} else {
+	cout &lt;&lt; "Odd\n";
+}
+		</code>
+
+		<p>Now "Odd" will be printed instead if the condition evaluated to <tt>false</tt>. What gets supplied to an else clause is another statement, in this case a <i>compound statement</i> or <i>block</i> was provided: that is, one or more statements enclosed in braces.</p>
+
+		<p>Since an If Statement is a kind of statement in C++, another If Statement can be specified to an Else Clause. Effectively this mean one can chain several If Statements together:</p>
+
+		<code>
+double cs;
+cout &lt;&lt; "Enter credit score:";
+cin &gt;&gt; cs;
+if (cs &gt;= 720) {
+	cout &lt;&lt; "Excellent\n";
+} else if (cs &gt;= 690) {
+	cout &lt;&lt; "Good\n";
+} else if (cs &gt;= 630) {
+	cout &lt;&lt; "Fair\n";
+} else {
+	cout &lt;&lt; "Bad\n";
+}
+		</code>
+
+		<p>The other kind of selection statement in C++ is the <a href="http://en.cppreference.com/w/cpp/language/switch"><i>switch statement</i></a>, this will be demonstrated in lecture.</p>
 	</body>
 </html>
