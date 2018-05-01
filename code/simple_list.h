@@ -153,10 +153,8 @@ public:
 	iterator insert(iterator pos, const T& value)
 	{
 		node* new_node_ptr = new node(value);
-		node *before, *after;
+		node *before = pos.node_ptr->before, *after = pos.node_ptr;
 
-		before = pos.node_ptr->before;
-		after = pos.node_ptr;
 		new_node_ptr->before = before;
 		new_node_ptr->after = after;
 		if (before == 0)
