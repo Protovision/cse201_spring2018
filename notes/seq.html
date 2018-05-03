@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sequences and iteration</title>
+		<meta name="author" content="Mark Swoope">
+		<meta name="description" content="C++ programming">
+		<link rel="stylesheet" type="text/css" href="../main.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="../index.html">Welcome</a></li>
+			<li><a href="compsoft.html">Computers and Software</a></li>
+			<li><a href="cpp.html">C++ programming</a></li>
+			<li><a href="vars.html">Variables, Types, and Values</a></li>
+			<li><a href="expr.html">Computation</a></li>
+			<li><a href="io.html">Input/Output</a></li>
+			<li><a href="conv.html">Conversions</a></li>
+			<li><a href="ref.html">Constness and references</a></li>
+			<li><a href="func.html">Functions</a></li>
+			<li><a href="cond.html">Selection and conditions</a></li>
+			<li><a class="active" href="#">Iteration and Sequence containers</a></li>
+			<!--
+			<li><a href="#">Classes</a></li>
+			-->
+		</ul>
+
+		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+
+		<h1>Sequences</h1>
+
+		<p>C++ provides a family of types known as <a href="https://en.cppreference.com/w/cpp/container/vector"><i>vector</i></a>. A vector, which is more generally referred to as a <i>dynamic array</i>, is conceptually a sequence of values all of the same type.</p>
+
+		<p>Unlike a variable of some scalar or fundamental type that can only store a single value, a vector variable can store multiple values of the same type. Each value that is stored in a vector is known as an <i>element</i> of that vector. The type of all the elements is known as the <i>element type</i>.</p>
+
+		<p>A declaration of a kind of vector looks like the following:</p>
+
+		<code>
+vector&lt;int&gt; v;
+		</code>
+
+		<p>This variable is named <tt>v</tt> and it's type is called "vector of <tt>int</tt>"; this particular vector has <tt>int</tt> as it's element type. Right after the point of declaration, no initializer was provided to <tt>v</tt> therefore this vector initially contains no elements.</p>
+
+		<p>During declaration or at any time after declaration, a list of values can be assigned to a vector:</p>
+
+		<code>
+v = { 4, -20, 7, 42, 0, -86, 55 };
+		</code>
+
+		<p>The operand used for assigning to this vector is a possibly empty braced-enclosed list of values each of the same type: it is known as a <i>braced-init-list</i> or more generally as an <i>initializer list</i>. An initializer list can be used to initialize many kinds of objects that can store elements. When an initializer list is assigned to a vector, all of the values within that list will replace any existing content of that vector.</p>
+
+		<p>Each element of a vector can be accessed using the subscript operator (<tt>[]</tt>):</p>
+
+		<code>
+v[0] = 3;
+cout &lt;&lt; v[0] &lt;&lt; ' ' &lt;&lt; v[1] &lt;&lt; v[2] &lt;&lt; endl;
+		</code>
+
+		<p>A particular vector element can be accessed through it's <i>index</i>, which is an integral value within the range of 0 to N where N is the number of elements in the vector. 0 is the index of the first element and N-1 is the index of the last element. When a vector element is accessed, one can either assign a new value to it or use it within some other expression.</p>
+
+		<p>A vector can expand and store additional elements, one way to do this is through an operation known as push_back:</p>
+
+		<code>
+v.push_back(123);
+		</code>
+
+		<p>push_back is not just a function, it is a <i>member function</i> of all vector types, accessible through an existing vector object using the member-of operator (<tt>.</tt>). In the above code, a new element shall be created and inserted at the end of the vector named <tt>v</tt> and the value of that element shall be 123.</p>
+
+		<p>If one wanted to undo the last push_back operation on a vector, the member function <tt>pop_back</tt> can be called with zero arguments: it shall erase the last element of the vector.</p>
+
+<h1>Iteration</h1>
+
+		<p>Many times, one wishes to <i>iterate</i> through all elements of a vector. The purpose of doing this might be to print each element, accumulate all the elements into a calculation, or to apply an operation on each element. The following code prints each element of our <tt>vector&lt;int&gt; v</tt>:</p>
+
+		<code>
+int i = 0;
+while (i &lt; v.size()) {
+	cout &lt;&lt; v[i] &lt;&lt; ' ';
+	++i;
+}
+		</code>
+
+		<p>The control structure shown above is known as a <i>while-loop</i>, it repeatedly executes it's supplied statement(s) while it's supplied condition evaluates to <tt>true</tt>. The variable <tt>i</tt>, initialized at 0, increments on each iteration where an element of the vector at index <tt>i</tt> gets printed until <tt>i</tt> reaches beyond the last index of the vector: that index being equal to the number of elements in <tt>v</tt> which can be queried with a call to the member function <tt>size</tt>.</p>
+
+		<p>This method of iterating through a vector is alternative to the more common use of the <i>for-loop</i>:</p>
+
+		<code>
+for (int i = 0; i &lt; v.size(); ++i) {
+	cout &lt;&lt; v[i] &lt;&lt; ' ';
+}
+		</code>
+
+		<p>The for-loop requires an initial statement, a condition, an iteration expression, and a statement or compound statement in this order. The initial statement executes exactly once, the condition get evaluated at the beginning of each iteration (terminating the for-loop if this condition evaluates to false), the iteration expression evaluates at the end of each iteration, and the main statement gets executed during each iteration (after the condition and before the iteration expression).</p>
+
+		<p>for-loops are usually used if one needs to "count" through a sequence and apply some operation during the progression of this sequence. If one does not need to know the index of the current element during an iteration through a vector, then one can use a <i>range-based for-loop</i>:</p>
+
+		<code>
+for (int e : v) cout &lt;&lt; e &lt;&lt; ' ';
+		</code>
+
+		<p>This form of for-loop can be read as "for each <tt>int</tt> e in v, print e and a space". On each iteration, the variable e will be assigned a copy of the next element in v.</p>
+
+		<p>If one wants to modify each element in a vector, a reference can be used in the range-based for-loop instead:</p>
+
+		<code>
+for (int&amp; e : v) e *= 2;
+	</code>
+
+	<p>The code above will multiply and assign each element by 2.</p>
+
+	<p>Often times, it is desirable to extract <b>all</b> standard input and perhaps store it into a vector:</p>
+
+	<code>
+double n;
+vector&lt;double&gt; v;
+while (cin &gt;&gt; n) v.push_back(n);
+	</code>
+
+	<p>This code can be roughly interpreted as "while a number was successfully scanned, append it to v". This code works because the variable <tt>cin</tt> has a special implicit conversion to <tt>bool</tt> which evaluates to <tt>false</tt> if the last input operation failed.</p>
+
+	<p>If standard input is from the keyboard, then the way the user signals the end of input is by pressing <b>CTRL-D</b>.</p>
+
+<h1>Algorithms</h1>
+
+		<p>The following algorithms are useful for processing a vector of double:</p>
+
+		<code>
+double double_vector_max(const vector&lt;double&gt; v)
+{
+	double max = v[0];
+	for (double e : v) {
+		if (e &gt; max) max = e;
+	}
+	return max;
+}
+
+double double_vector_min(const vector&lt;double&gt; v)
+{
+	double min = v[0];
+	for (double e : v) {
+		if (e &lt; min) min = e;
+	}
+	return min;
+}
+
+double double_vector_sum(const vector&lt;double&gt; v)
+{
+	double sum = 0;
+	for (double e : v) sum += e;
+	return sum;
+}
+
+double double_vector_product(const vector&lt;double&gt; v)
+{
+	double prod = 1;
+	for (double e : v) prod *= e;
+	return prod;
+}
+
+double double_vector_mean(const vector&lt;double&gt; v)
+{
+	double sum = double_vector_sum(v);
+	return sum / v.size();
+}
+
+double double_vector_range(const vector&lt;double&gt; v)
+{
+	return double_vector_max(v) - double_vector_min(v);
+}
+	</code>
+
+	<p>The following table demonstrates the use of some of the member functions available to all vectors; a vector of double named v is used as an example in this table:</p>
+
+	<table>
+		<tr>
+			<th>Expression</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><tt>v.front()</tt></td>
+			<td>Returns a reference to the first element of v</td>
+		</tr>
+		<tr>
+			<td><tt>v.back()</tt></td>
+			<td>Returns a reference to the last element of v</td>
+		</tr>
+		<tr>
+			<td><tt>v.empty()</tt></td>
+			<td>Returns <tt>true</tt> if v contains zero elements</td>
+		</tr>
+		<tr>
+			<td><tt>v.size()</tt></td>
+			<td>Returns the number of elements in v</td>
+		</tr>
+		<tr>
+			<td><tt>v.clear()</tt></td>
+			<td>Erases all elements from v</td>
+		</tr>
+		<tr>
+			<td><tt>v.push_back(x)</tt></td>
+			<td>Appends x to v</td>
+		</tr>
+		<tr>
+			<td><tt>v.pop_back()</tt></td>
+			<td>Erases the last element from v</td>
+		</tr>
+	</table>
+	</body>
+</html>
