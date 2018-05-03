@@ -124,7 +124,7 @@ while (cin &gt;&gt; n) v.push_back(n);
 		<p>The following algorithms are useful for processing a vector of double:</p>
 
 		<code>
-double double_vector_max(const vector&lt;double&gt; v)
+double double_vector_max(const vector&lt;double&gt;&amp; v)
 {
 	double max = v[0];
 	for (double e : v) {
@@ -133,7 +133,7 @@ double double_vector_max(const vector&lt;double&gt; v)
 	return max;
 }
 
-double double_vector_min(const vector&lt;double&gt; v)
+double double_vector_min(const vector&lt;double&gt;&amp; v)
 {
 	double min = v[0];
 	for (double e : v) {
@@ -142,27 +142,27 @@ double double_vector_min(const vector&lt;double&gt; v)
 	return min;
 }
 
-double double_vector_sum(const vector&lt;double&gt; v)
+double double_vector_sum(const vector&lt;double&gt;&amp; v)
 {
 	double sum = 0;
 	for (double e : v) sum += e;
 	return sum;
 }
 
-double double_vector_product(const vector&lt;double&gt; v)
+double double_vector_product(const vector&lt;double&gt;&amp; v)
 {
 	double prod = 1;
 	for (double e : v) prod *= e;
 	return prod;
 }
 
-double double_vector_mean(const vector&lt;double&gt; v)
+double double_vector_mean(const vector&lt;double&gt;&amp; v)
 {
 	double sum = double_vector_sum(v);
 	return sum / v.size();
 }
 
-double double_vector_range(const vector&lt;double&gt; v)
+double double_vector_range(const vector&lt;double&gt;&amp; v)
 {
 	return double_vector_max(v) - double_vector_min(v);
 }
