@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Solutions to previous assignments</title>
+		<meta name="author" content="Mark Swoope">
+		<meta name="description" content="C++ programming">
+		<link rel="stylesheet" type="text/css" href="../main.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="../index.html">Welcome</a></li>
+			<li><a href="compsoft.html">Computers and Software</a></li>
+			<li><a href="cpp.html">C++ programming</a></li>
+			<li><a href="vars.html">Variables, Types, and Values</a></li>
+			<li><a href="expr.html">Computation</a></li>
+			<li><a href="io.html">Input/Output</a></li>
+			<li><a href="conv.html">Conversions</a></li>
+			<li><a href="ref.html">Constness and references</a></li>
+			<li><a href="func.html">Functions</a></li>
+			<li><a href="cond.html">Selection and conditions</a></li>
+			<li><a href="seq.html">Iteration and Sequence containers</a></li>
+			<li><a class="active" href="#">Solutions to previous assignments</a></li>
+			<li><a href="class.html">Classes</a></li>
+		</ul>
+
+		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+
+		<h1>Solutions to previous assignments</h1>
+
+		<p>These are possible solutions to a selected group of exercises found in the lab assignments prepared by Dr. Turner.</p>
+
+		<h3>Lab 3, Exercise 6: Guess-the-Number Game</h3>
+
+		<code>
+#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;ctime&gt;
+using namespace std;
+
+int main()
+{
+	int n, guess;
+
+	srand(time(0));
+	n = rand() % 1000 + 1;
+	while (cin &gt;&gt; guess) {
+		if (guess &lt; n) {
+			cout &lt;&lt; "too small\n";
+		} else if (guess &gt; n) {
+			cout &lt;&lt; "too big\n";
+		} else {
+			cout &lt;&lt; "you got it\n";
+			return 0;	
+		}
+	}
+}
+		</code>
+
+		<h3>Lab 3, Exercise 8: Detecting prime numbers</h3>
+
+		<code>
+#include &lt;iostream&gt;
+using namespace std;
+
+bool is_prime(int x)
+{
+	for (int i = 2; i != x; ++i) {
+		if (x % i == 0) return false;
+	}
+	return true;
+}
+
+int main()
+{
+
+	int n = 0;
+	cout &lt;&lt; "Enter an integer greater than 1: ";
+	cin &gt;&gt; n;
+	if (n &lt;= 1) return 1;
+	if (is_prime(n)) cout &lt;&lt; "Prime\n";
+	else cout &lt;&lt; "Not prime\n";
+}
+		</code>
+
+		<h3>Lab 4, Exercise 4: Random integer function</h3>
+
+		<code>
+#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;ctime&gt;
+using namespace std;
+
+int randomInteger(int min, int max)
+{
+	return rand() % (max - min + 1) + min;
+}
+
+int main()
+{
+	int min = 0, max = 0;
+
+	srand(time(0));
+	cout &lt;&lt; "Min: ";
+	cin &gt;&gt; min;
+	cout &lt;&lt; "Max: ";
+	cin &gt;&gt; max;
+	cout &lt;&lt; randomInteger(min, max) &lt;&lt; endl;
+
+}
+		</code>
+
+	</body>
+</html>

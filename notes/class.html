@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Classes</title>
+		<meta name="author" content="Mark Swoope">
+		<meta name="description" content="C++ programming">
+		<link rel="stylesheet" type="text/css" href="../main.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="../index.html">Welcome</a></li>
+			<li><a href="compsoft.html">Computers and Software</a></li>
+			<li><a href="cpp.html">C++ programming</a></li>
+			<li><a href="vars.html">Variables, Types, and Values</a></li>
+			<li><a href="expr.html">Computation</a></li>
+			<li><a href="io.html">Input/Output</a></li>
+			<li><a href="conv.html">Conversions</a></li>
+			<li><a href="ref.html">Constness and references</a></li>
+			<li><a href="func.html">Functions</a></li>
+			<li><a href="cond.html">Selection and conditions</a></li>
+			<li><a href="seq.html">Iteration and Sequence containers</a></li>
+			<li><a href="sol.html">Solutions to previous assignments</a></li>
+			<li><a class="active" href="#">Classes</a></li> 
+		</ul>
+
+		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+
+		<h1>Classes</h1>
+		
+		<p>C++ supports many ways to create user-defined types, one way is through a <i><a href="http://en.cppreference.com/w/cpp/language/class">class declaration</a></i>. A class defines a set of members so that any object whose type is that class will have it's own set of those members.</p>
+
+		<p>The following is a class declaration:</p>
+
+		<code>
+struct card {
+	string rank;
+	string suit;
+};
+		</code>
+
+		<p>A new type has been created, the name of this type is <tt>card</tt>. The keyword <tt>struct</tt> can be used in a class declaration to indicate that all members should be accessible from any region of code. The members of this class are both data members: <tt>rank</tt> and <tt>suit</tt>.</p>
+
+		<p>A variable of this type can be declared and the data members of this variable can be accessed using the member-of operator:</p>
+
+		<code>
+card c;
+c.rank = "Queen";
+c.suit = "Hearts";
+		</code>
+
+		<p>One can think of the data members of a class type variable as the variables inside the variable.</p>
+
+		<p>A class can have member functions:</p>
+
+		<code>
+struct card {
+	string rank;
+	string suit;
+
+	void print()
+	{
+		cout &lt;&lt; rank &lt;&lt; " of " &lt;&lt; suit;
+	}
+};
+		</code>
+
+		<p>The member function can be called using the member-of operator and the function call operator with an existing object:</p>
+
+		<code>
+c.print();
+		</code>
+
+		<p>The body of a member function may access other members specified in the enclosing class, the actual member to be accessed will always be relative to the object from which the member function was called (known as the "this" object).</p>
+
+
+	</body>
+</html>
