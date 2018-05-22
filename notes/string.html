@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Strings</title>
+		<meta name="author" content="Mark Swoope">
+		<meta name="description" content="C++ programming">
+		<link rel="stylesheet" type="text/css" href="../main.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="../index.html">Welcome</a></li>
+			<li><a href="compsoft.html">Computers and Software</a></li>
+			<li><a href="cpp.html">C++ programming</a></li>
+			<li><a href="vars.html">Variables, Types, and Values</a></li>
+			<li><a href="expr.html">Computation</a></li>
+			<li><a href="io.html">Input/Output</a></li>
+			<li><a href="conv.html">Conversions</a></li>
+			<li><a href="ref.html">Constness and references</a></li>
+			<li><a href="func.html">Functions</a></li>
+			<li><a href="cond.html">Selection and conditions</a></li>
+			<li><a href="seq.html">Iteration and Sequence containers</a></li>
+			<li><a href="sol.html">Solutions to previous assignments</a></li>
+			<li><a href="class.html">Classes</a></li>
+			<li><a class="active" href="#">Strings</a></li>
+		</ul>
+
+		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+
+		<h1>String</h1>
+
+		<p>String manipulation is a very important and practical part of computer science and computer programming. While the contents of a string is usually used to store a message for humans to read, it may also be used to store any kind of data in a format that's compatible with any computer.</p>
+
+		<p>A string is essentially a vector of characters, but with additional features that are useful and particular to a vector of characters. For the following expressions, assume s and t are string variables, and i and n are integers.
+
+		<table>
+			<tr>
+				<th>Expression</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><tt>s = t</tt></td>
+				<td>Assigns t to s</td>
+			</tr>
+			<tr>
+				<td><tt>s[i]</tt></td>
+				<td>Accesses the character at index i in s</td>
+			</tr>
+			<tr>
+				<td><tt>s.size()</tt></td>
+				<td>Returns the number of characters in s</td>
+			</tr>
+			<tr>
+				<td><tt>s = ""</tt></td>
+				<td>Erases all characters in s</td>
+			</tr>
+			<tr>
+				<td><tt>s.insert(i, t)</tt></td>
+				<td>Inserts the t into s at index i</td>
+			</tr>
+			<tr>
+				<td><tt>s.erase(i, n)</tt></td>
+				<td>Erases n characters at index i from s</td>
+			</tr>
+			<tr>
+				<td><tt>s += t</tt></td>
+				<td>Appends t to s</td>
+			</tr>
+			<tr>
+				<td><tt>s.substr(i, n)</tt></td>
+				<td>Returns a copy of the substring residing at index i in s and occupying n characters</td>
+			</tr>
+			<tr>
+				<td><tt>s.find(t)</tt></td>
+				<td>Returns the index of the first occurrence of substring t in s or returns <tt>string::npos</tt> if t was not found in s</td>
+			</tr>
+			<tr>
+				<td><tt>s.rfind(t)</tt></td>
+				<td>Returns the index of the last occurrence of substring t in s or returns <tt>string::npos</tt> if t was not found in s</td>
+			</tr>
+			<tr>
+				<td><tt>s + t</tt></td>
+				<td>Returns a new string that is the concatenation of s and t</td>
+			</tr>
+			<tr>
+				<td><tt>s == t</tt></td>
+				<td>Returns <tt>true</tt> if s and t contain the same characters in the same order</td>
+			</tr>
+			<tr>
+				<td><tt>s != t</tt></td>
+				<td>Returns <tt>true</tt> if s and t do not contain the same characters in the same order</td>
+			</tr>
+			<tr>
+				<td><tt>swap(s, t)</tt></td>
+				<td>Exchanges the contents of s and t</td>
+			</tr>
+			<tr>
+				<td><tt>stoi(s)</tt></td>
+				<td>Converts a <tt>string</tt> to <tt>int</tt></td>
+			</tr>
+			<tr>
+				<td><tt>stod(s)</tt></td>
+				<td>Converts a <tt>string</tt> to <tt>double</tt></td>
+			</tr>
+			<tr>
+				<td><tt>to_string(x)</tt></td>
+				<td>Converts an <tt>int</tt> or <tt>double</tt> to <tt>string</tt></td>
+			</tr>
+		</table>
+
+		<p>Let's look at some examples of the operations that require one to specify an index and a count. Assume <tt>string s = "Hello world";</tt> has been declared, here is a "graphical" representation of our string:</p>
+		<code>
+  0   1   2   3   4   5   6   7   8   9   10
++---+---+---+---+---+---+---+---+---+---+---+
+| h | e | l | l | o |   | w | o | r | l | d |
++---+---+---+---+---+---+---+---+---+---+---+
+		</code>
+
+		<p>There are 11 characters, each indexed from 0 to 10. So currently, <tt>s.size()</tt> will return 11, <tt>s[0]</tt> will return <tt>'h'</tt>, <tt>s[1]</tt> will return <tt>'e'</tt>, ..., and <tt>s[10]</tt> will return <tt>'d'</tt></p>
+
+		<p>The expression <tt>s.insert(6, "big ")</tt> will modify <tt>s</tt> by inserting "big " into <tt>s</tt> at index <tt>6</tt>:</p>
+
+		<code>
++---+---+---+---+
+| b | i | g |   |---------+
++---+---+---+---+         |
+                          V
+  0   1   2   3   4   5   6   7   8   9   10
++---+---+---+---+---+---+---+---+---+---+---+
+| h | e | l | l | o |   | w | o | r | l | d |
++---+---+---+---+---+---+---+---+---+---+---+
+
+...
+
+  0   1   2   3   4   5   6   7   8   9   10  11  12  13  14
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+| h | e | l | l | o |   | b | i | g |   | w | o | r | l | d |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+
+		</code>
+
+		<p>The result is that the characters at index 6 will be "big " and the characters that previously occupied that index are shifted over to the right.</p>
+
+		<p>The reverse can be accomplished using erase with <tt>s.erase(6, 4)</tt>:</p>
+
+		<code>
+                           erase(6, 4)
+                          +-----------+
+                          |           |
+                          V           V
+  0   1   2   3   4   5   6   7   8   9   10  11  12  13  14
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+| h | e | l | l | o |   | b | i | g |   | w | o | r | l | d |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+
+...
+
+  0   1   2   3   4   5   6   7   8   9   10
++---+---+---+---+---+---+---+---+---+---+---+
+| h | e | l | l | o |   | w | o | r | l | d |
++---+---+---+---+---+---+---+---+---+---+---+
+		</code>
+
+		<p>Erase effectively shifts characters from the right to the left to cover over the substring that one is erasing. With the <tt>substring</tt> member function, one can extract a portion of this string; <tt>s.substr(0, 5)</tt> returns a string containing "hello" and <tt>s.substr(6, 5)</tt> returns a string containing "world".</p>
+
+		<code>
+    substr(0, 5)             substr(6, 5)
+  +---------------+       +---------------+
+  |               |       |               |
+  V               V       V               V
+  0   1   2   3   4   5   6   7   8   9   10
++---+---+---+---+---+---+---+---+---+---+---+
+| h | e | l | l | o |   | w | o | r | l | d |
++---+---+---+---+---+---+---+---+---+---+---+
+		</code>
+
+		<p>These operations can be combined, and code can be written to erase all occurrences of a particular word from a string:</p>
+
+		<code>
+string s = "The red car was parked by the red house";
+for (int i = s.find("red "); i != string::npos; i = s.find("red "))
+	s.erase(i, 4);
+cout &lt;&lt; s &lt;&lt; endl;
+		</code>
+
+		<p>The code above outputs "The car was parked by the house"</p>
+	</body>
+</html>
