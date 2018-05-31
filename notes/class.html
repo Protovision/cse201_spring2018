@@ -75,5 +75,78 @@ c.print();
 		<p>The body of a member function may access other members specified in the enclosing class, the actual member to be accessed will always be relative to the object from which the member function was called (known as the "this" object).</p>
 
 
+		<p>The members of a class always have an access mode which restricts that member from being accessed from certain regions of code. Consider the following, more advanced, class:</p>
+
+		<code>
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+double degrees_to_radians(double d)
+{
+	const double pi = 4 * atan(1);
+	return (d * pi / 180);
+}
+
+class vector_2d {
+public:
+	double magnitude() const
+	{
+		return sqrt(pow(x, 2) + pow(y, 2));	
+	}
+
+	double direction() const
+	{
+		return atan2(y, x);
+	}
+
+	double first() const
+	{
+		return x;
+	}
+
+	double second() const
+	{
+		return y;
+	}
+
+	void set(double mag, double dir)
+	{
+		double r_dir = degrees_to_radians(dir);
+
+		x = mag * cos(r_dir);
+		y = mag * sin(r_dir);
+	}
+private:
+	double x, y;
+};
+
+int main()
+{
+	double mag, dir;
+	vector_2d v;
+	cout &lt;&lt; "Set magnitude: ";
+	cin &gt;&gt; mag;
+	cout &lt;&lt; "Set direction: ";
+	cin &gt;&gt; dir;
+	v.set(mag, dir);
+	cout &lt;&lt; "The components are: " &lt;&lt;
+		v.first() &lt;&lt; ' ' &lt;&lt;
+		v.second() &lt;&lt; endl;
+	return 0;
+
+}
+		</code>
+
+		<p>Here the keyword <tt>class</tt> is used instead of <tt>struct</tt>. Unlike <tt>struct</tt>, the default access mode for <tt>class</tt> is <tt>private</tt>; whereas the default access mode for <tt>struct</tt> is <tt>public</tt>. Other than this difference, both <tt>class</tt> and <tt>struct</tt> are the same in C++.</p>
+
+		<p>The access mode for a region of class members can be specified as shown in the above code. Any code inside or outside the class may access public members; however, only code inside the same class may access private members.</p>
+
+		<p>Even though x and y are private in vector_2d, their values can be fetched through the <tt>first</tt> and <tt>second</tt> public members functions; however, x and y cannot be directly assigned to from outside the class. The only way x and y can be modified from outside code is indirectly through the <tt>set</tt> public member function.</p>
+	
+		<p>Tuning the access modes of various class members allows one to craft a well-defined interface over data that outside code need not necessarily know about.</p>
+
+		<p>Notice the <tt>const</tt> keyword used after all the member functions except <tt>set</tt>, a function marked as <tt>const</tt> indicates that that member function does not make any assignments to data members, allowing that member function to be called on variables declared as <tt>const</tt>.</p>
+
 	</body>
 </html>
