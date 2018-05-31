@@ -63,4 +63,7 @@ th, td {
 	padding: 8px;
 }
 
+ul.mc {
+	list-style-type: none;
+}
 

@@ -26,6 +26,7 @@ public:
 		friend class simple_list;
 	private:
 		node* node_ptr;
+		void f() {}
 	public:
 		iterator() : node_ptr(0)
 		{
