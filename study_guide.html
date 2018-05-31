@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Computer Science I</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="index.html">Welcome</a></li>
+			<li><a href="notes/compsoft.html">Computers and Software</a></li>
+			<li><a href="notes/cpp.html">C++ programming</a></li>
+			<li><a href="notes/vars.html">Variables, Types, and Values</a></li>
+			<li><a href="notes/expr.html">Computation</a></li>
+			<li><a href="notes/io.html">Input/Output</a></li>
+			<li><a href="notes/conv.html">Conversions</a></li>
+			<li><a href="notes/ref.html">Constness and references</a></li>
+			<li><a href="notes/func.html">Functions</a></li>
+			<li><a href="notes/cond.html">Selection and conditions</a></li>
+			<li><a href="notes/seq.html">Iteration and Sequence containers</a></li>
+			<li><a href="notes/sol.html">Solutions to previous assignments</a></li>
+			<li><a href="notes/class.html">Classes</a></li>
+			<li><a href="notes/string.html">Strings</a></li>
+			<li><a class="active" href="#">Study guide</a></li>
+		</ul>
+
+		<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+			<h1>Final Exam Study Guide</h1>
+
+			<p>20 of the following questions will be asked on the final exam. Unless otherwise specified, all questions are relative to the C++ programming language.</p>
+
+			<h2>Language concepts</h2>
+			
+			<p>1. What is a variable?</p>
+
+			<ul class="mc">
+				<li>A) A name and a type</li>
+				<li>B) A name and a value</li>
+				<li>C) A name, a type, and a value</li>
+				<li>D) A name, a type, and a memory location</li>
+			</ul>
+
+			<p>2. All objects have what in common?</p>
+
+			<ul class="mc">
+				<li>A) They have a name</li>
+				<li>B) They have a determinate value</li>
+				<li>C) They have a size</li>
+				<li>D) They can be assigned to</li>
+			</ul>
+
+			<p>3. Which of the following is mandatory for a function definition?</p>
+
+			<ul class="mc">
+				<li>A) A function body</li>
+				<li>B) A return value</li>
+				<li>C) A parameter</li>
+				<li>D) An enclosing class</li>
+			</ul>
+
+			<p>4. Which expression performs a function call?</p>
+
+			<ul class="mc">
+				<li>A) <tt>*f</tt></li>
+				<li>B) <tt>&amp;f</tt></li>
+				<li>C) <tt>f[0]</tt></li>
+				<li>D) <tt>f()</tt></li>
+			</ul>
+
+			<p>5. What is the meaning of the return value of the main function?</p>
+
+			<ul class="mc">
+				<li>A) Non-zero indicates program success, zero indicates program failure.</li>
+				<li>B) Zero indicates program success, non-zero indicates program failure.</li>
+			</ul>
+
+			<p>6. A function with a return type of <tt>void</tt> signifies</p>
+
+			<ul class="mc">
+				<li>A) The function does not return</li>
+				<li>B) The function has no side-effects</li>
+				<li>C) The function has no return value</li>
+				<li>D) The function requires no arguments</li>
+			</ul>
+
+			<p>7. A sequence of operators and their operands, followed by a semicolon is a(n):</p>
+
+			<ul class="mc">
+				<li>A) Selection statement</li>
+				<li>B) Declaration statement</li>
+				<li>C) Compound statement</li>
+				<li>D) Expression statement</li>
+			</ul>
+
+			<p>8. All assignment and compound assignment expressions return:</p>
+
+			<ul class="mc">
+				<li>A) The left operand</li>
+				<li>B) The right operand</li>
+				<li>C) A temporary value</li>
+				<li>D) Nothing</li>
+			</ul>
+
+			<p>9. All non-assignment, arithmetic operators, when used on values of type <tt>int</tt> or <tt>double</tt>, return:</p>
+
+			<ul class="mc">
+				<li>A) The left operand</li>
+				<li>B) The right operand</li>
+				<li>C) A temporary value</li>
+				<li>D) Nothing</li>
+			</ul>
+
+			<p>10. The return type of a comparison operator is:</p>
+
+			<ul class="mc">
+				<li>A) <tt>bool</tt></li>
+				<li>B) <tt>char</tt></li>
+				<li>C) <tt>int</tt></li>
+				<li>D) <tt>double</tt></li>
+			</ul>
+
+			<p>11. A unary operator requires how many operands?</p>
+
+			<ul class="mc">
+				<li>A) 0</li>
+				<li>B) 1</li>
+				<li>C) 2</li>
+				<li>D) 3</li>
+			</ul>
+
+			<p>12. What variable scope has the longest lifetime?</p>
+
+			<ul class="mc">
+				<li>A) Block scope</li>
+				<li>B) Global scope</li>
+				<li>C) Class scope</li>
+				<li>D) Function scope</li>
+			</ul>
+
+			<p>13. A variable whose initial value cannot be replaced must be declared as:</p>
+
+			<ul class="mc">
+				<li>A) <tt>volatile</tt></li>
+				<li>B) <tt>static</tt></li>
+				<li>C) <tt>const</tt></li>
+				<li>D) <tt>auto</tt></li>
+			</ul>
+
+			<p>14. When a value undergoes conversion, what happens?</p>
+
+			<ul class="mc">
+				<li>A) The value gets moved</li>
+				<li>B) The value changes</li>
+				<li>C) A new value with the same type gets created</li>
+				<li>D) A new value with a different type gets created</li>
+			</ul>
+
+			<p>15. C-style cast expressions and functional cast expressions are examples of:</p>
+			
+			<ul class="mc">
+				<li>A) Explicit conversions
+				<li>B) Implicit conversions</li>
+				<li>C) Standard conversions</li>
+				<li>D) User-defined conversions</li>
+			</ul>
+
+			<p>16. Which of the following describes a conversion where no information can be lost?</p>
+			<ul class="mc">
+				<li>A) <tt>double</tt> to <tt>int</tt></li>
+				<li>B) <tt>int</tt> to <tt>char</tt></li>
+				<li>C) <tt>bool</tt> to <tt>int</tt></li>
+				<li>D) <tt>int</tt> to <tt>double</tt></li>
+			</ul>
+
+			<p>17. Variables declared directly within a class are called:</p>
+
+			<ul class="mc">
+				<li>A) Properties</li>
+				<li>B) Data members</li>
+				<li>C) Member variables</li>
+				<li>D) Attributes</li>
+			</ul>
+
+			<p>18. Functions declared directly within a class are called:</p>
+
+			<ul class="mc">
+				<li>A) Member functions</li>
+				<li>B) Subprocedures</li>
+				<li>C) Methods</li>
+				<li>D) Operations</li>
+			</ul>
+
+			<p>19. A private member of a class can be accessed from:</p>
+
+			<ul class="mc">
+				<li>A) Any function</li>
+				<li>B) Any function inside the same class</li>
+				<li>C) Any private function</li>
+				<li>D) Any private function inside the same class</li>
+			</ul>
+
+			<p>20. A public member of a class can be accessed from:</p>
+
+			<ul class="mc">
+				<li>A) Any function</li>
+				<li>B) Any function inside the same class</li>
+				<li>C) Any public function</li>
+				<li>D) Any public function inside the same class</li>
+			</ul>
+
+			<p>21. The kinds of statements that repeatedly execute code are generally known as:</p>
+
+			<ul class="mc">
+				<li>A) Cycles</li>
+				<li>B) Loops</li>
+				<li>C) Repetitions</li>
+				<li>D) Recurrences</li>
+			</ul>
+
+			<p>22. Which of the following is always true about referrences?</p>
+
+			<ul class="mc">
+				<li>A) A reference must be declared with an initializer</li>
+				<li>B) A reference does not store anything</li>
+				<li>C) A reference stores an address</li>
+				<li>D) A reference can refer to multiple variables over it's lifetime</li>
+			</ul>
+
+			<p>23. A pointer with the value 0 is known as:</p>
+
+			<ul class="mc">
+				<li>A) A dangling pointer</li>
+				<li>B) An empty pointer</li>
+				<li>C) A void pointer</li>
+				<li>D) A null pointer</li>
+			</ul>
+
+			<p>24. A condition is convertible to:</p>
+
+			<ul class="mc">
+				<li>A) <tt>void*</tt></li>
+				<li>B) <tt>int</tt></li>
+				<li>C) <tt>bool</tt></li>
+				<li>D) <tt>string</tt></li>
+			</ul>
+
+			<p>25. Another term for a compound statement is:</p>
+
+			<ul class="mc">
+				<li>A) An aggregate</li>
+				<li>B) A fragment</li>
+				<li>C) A sequence</li>
+				<li>D) A block</li>
+			</ul>
+
+			<h2>Standard library concepts</h2>
+
+			<p>26. Which of the following is a valid expression that returns the number of elements in a vector</p>
+
+			<ul class="mc">
+				<li>A) <tt>sizeof(v)</tt></li>
+				<li>B) <tt>v.length()</tt></li>
+				<li>C) <tt>v.size()</tt></li>
+				<li>D) <tt>v.count()</tt></li>
+			</ul>
+
+			<p>27. When integer literals are used as arguments, almost all of the common mathematical functions return a value of type:</p>
+
+			<ul class="mc">
+				<li>A) <tt>int</tt></li>
+				<li>B) <tt>float</tt></li>
+				<li>C) <tt>double</tt></li>
+				<li>D) <tt>long double</tt></li>
+			</ul>
+
+			<p>28. What is the name of the function that raises a number to a power?</p>
+
+			<ul class="mc">
+				<li>A) <tt>exp</tt></li>
+				<li>B) <tt>pow</tt></li>
+				<li>C) <tt>raise</tt></li>
+				<li>D) <tt>x^y</tt></li>
+			</ul>
+
+			<p>29. Which of the following is a valid operator that performs stream insertion?</p>
+
+			<ul class="mc">
+				<li>A) <tt>&lt;&lt;</tt></li>
+				<li>B) <tt>&lt;-</tt></li>
+				<li>C) <tt>&gt;&gt;</tt></li>
+				<li>D) <tt>-&gt;</tt></li>
+			</ul>
+
+			<p>30. Which of the following is a valid operator that performs stream extraction?</p>
+
+			<ul class="mc">
+				<li>A) <tt>&lt;&lt;</tt></li>
+				<li>B) <tt>&lt;-</tt></li>
+				<li>C) <tt>&gt;&gt;</tt></li>
+				<li>D) <tt>-&gt;</tt></li>
+			</ul>
+
+			<p>31. Which of the following is a valid expression that erases all elements from a vector named v?</p>
+
+			<ul class="mc">
+				<li>A) <tt>v.reset()</tt></li>
+				<li>B) <tt>v.erase_all()</tt></li>
+				<li>C) <tt>v.empty()</tt></li>
+				<li>D) <tt>v.clear()</tt></li>
+			</ul>
+
+			<p>32. Which of the following is a valid expression that returns the first element of a vector named v?</p>
+
+			<ul class="mc">
+				<li>A) <tt>v.begin()</tt></li>
+				<li>B) <tt>v.first()</tt></li>
+				<li>C) <tt>v.front()</tt></li>
+				<li>D) <tt>v[1]</tt></li>
+			</ul>
+
+			<p>33. Which of the following is a valid expression that returns the last element of a vector named v?</p>
+
+			<ul class="mc">
+				<li>A) <tt>v.last()</tt></li>
+				<li>B) <tt>v.back()</tt></li>
+				<li>C) <tt>v.end()</tt></li>
+				<li>D) <tt>v[v.size()]</tt></li>
+			</ul>
+
+			<p>34. What is the name of the function that reads a line from an input stream?</p>
+
+			<ul class="mc">
+				<li>A) <tt>readline</tt></li>
+				<li>B) <tt>readln</tt></li>
+				<li>C) <tt>getline</tt></li>
+				<li>D) <tt>getln</tt></li>
+			</ul>
+
+			<p>35. The <tt>rand</tt> function never returns a value...</p>
+
+			<ul class="mc">
+				<li>A) Less than 0</li>
+				<li>B) Less than or equal to 0</li>
+				<li>C) Less than 1</li>
+				<li>D) Less than or equal to 1</li>
+			</ul>
+
+			<p>36. The <tt>string</tt> type represents:</p>
+
+			<ul class="mc">
+				<li>A) A sequence of bits</li>
+				<li>B) A sequence of bytes</li>
+				<li>C) A sequence of characters</li>
+				<li>D) A sequence of integers</li>
+			</ul>
+
+			<p>37. One valid set of arguments to <tt>string::erase</tt> is:</p>
+
+			<ul class="mc">
+				<li>A) A starting index and an index past the last element to erase</li>
+				<li>B) A starting index and an index at the last element to erase</li>
+				<li>C) A starting index and the number of elements that should remain after the operation</li>
+				<li>D) A starting index and the number of elements to erase</li>
+			</ul>
+
+			<p>38. What is the name of the function that can convert an integer into a string?</p>
+
+			<ul class="mc">
+				<li>A) <tt>itos</tt></li>
+				<li>B) <tt>itoa</tt></li>
+				<li>C) <tt>int_to_string</tt></li>
+				<li>D) <tt>to_string</tt></li>
+			</ul>
+
+			<p>39. What is the name of the function that can convert a string to an integer?</p>
+
+			<ul class="mc">
+				<li>A) <tt>stoi</tt></li>
+				<li>B) <tt>atoi</tt></li>
+				<li>C) <tt>string_to_int</tt></li>
+				<li>D) <tt>to_int</tt></li>
+			</ul>
+
+			<p>40. Assuming <tt>c</tt> is a variable of type <tt>char</tt>, which of the following is a valid expression that extracts the next character, including whitespace, from <tt>cin</tt> and assigns it to <tt>c</tt>?</p>
+
+			<ul class="mc">
+				<li>A) <tt>cin &gt;&gt; c</tt></li>
+				<li>B) <tt>cin.get(c)</tt></li>
+				<li>C) <tt>cin.getc(c)</tt></li>
+				<li>D) <tt>cin.getchar(c)</tt></li>
+			</ul>
+
+			<p>41. Assuming <tt>s</tt> is a variable of type <tt>string</tt>, which of the following is a valid expression that extracts the next word (non-whitespace characters) from <tt>cin</tt> and assigns it to <tt>s</tt>?</p>
+
+			<ul class="mc">
+				<li>A) <tt>cin &gt;&gt; s</tt></li>
+				<li>B) <tt>cin.getw(s)</tt></li>
+				<li>C) <tt>cin.getword(s)</tt></li>
+				<li>D) <tt>cin.gets(s)</tt></li>
+			</ul>
+
+			<p>42. If <tt>cin</tt> is associated with the keyboard, what key combination signals the end of all further user input without necessarily terminating the program?</p>
+
+			<ul class="mc">
+				<li>A) CTRL-C</li>
+				<li>B) CTRL-D</li>
+				<li>C) CTRL-Z</li>
+				<li>D) CTRL-\</li>
+			</ul>
+
+			<p>43. What does <tt>assert</tt> do?</p>
+
+			<ul class="mc">
+				<li>A) Aborts the program if the given expression is <tt>false</tt></li>
+				<li>B) Aborts the program if the given expression is <tt>true</tt></li>
+				<li>C) Exits the program if the given expression is <tt>false</tt></li>
+				<li>D) Exits the program if the given expression is <tt>true</tt></li>
+			</ul>
+
+			<p>44. What is the name of the function that exchanges the values between two variables of the same type?</p>
+
+			<ul class="mc">
+				<li>A) <tt>switch</tt></li>
+				<li>B) <tt>xchg</tt></li>
+				<li>C) <tt>swap</tt></li>
+				<li>D) <tt>exchange</tt></li>
+			</ul>
+
+			<p>45. The expression <tt>time(0)</tt> returns a value that represents the current time in...</p>
+
+			<ul class="mc">
+				<li>A) Microseconds</li>
+				<li>B) Nanoseconds</li>
+				<li>C) Milliseconds</li>
+				<li>D) Seconds</li>
+			</ul>
+
+			<h2>Code analyzation:</h2>
+
+			<p>46. What does the following code print?</p>
+
+			<code>
+int k = 1;
+cout &lt;&lt; k++ &lt;&lt; ' ';
+cout &lt;&lt; ++k &lt;&lt; endl;
+			</code>
+
+			<p>47. What does the following code print?</p>
+
+			<code>
+int k = 5;
+cout &lt;&lt; --k &lt;&lt; ' ';
+cout &lt;&lt; k-- &lt;&lt; endl;
+			</code>
+
+			<p>48. What does the following code print?</p>
+
+			<code>
+int x = 1;
+int y = 0;
+{
+	int x = 2;
+	y = x + x;
+	{
+		int y = 4;
+		x = y + 1;
+	}
+}
+cout &lt;&lt; x &lt;&lt; ' ' &lt;&lt; y &lt;&lt; endl;
+			</code>
+
+			<p>49. What does the following code print?</p>
+
+			<code>
+int x = 0;
+{
+	int x = 1;
+	cout &lt;&lt; x &lt;&lt; ' ';
+}
+cout &lt;&lt; x &lt;&lt; endl;
+			</code>
+
+			<p>50. What does the following code print?</p>
+
+			<code>
+int x = true;
+double y = int(5.4) + 0.1 * true + false;
+cout &lt;&lt; (x - y) &lt;&lt; endl;
+			</code>
+
+			<p>51. What does the following code print?</p>
+
+			<code>
+int x = 3.4;
+double d = false;
+cout &lt;&lt; (x + d) &lt;&lt; endl;
+			</code>
+
+			<p>52. What does the following code print?</p>
+
+			<code>
+cout &lt;&lt; (100 % 5) &lt;&lt; endl;
+			</code>
+
+			<p>53. What does the following code print?</p>
+
+			<code>
+cout &lt;&lt; (31 % 2) &lt;&lt; endl;
+			</code>
+
+			<p>54. What does the following code print?</p>
+
+			<code>
+class T {
+public:
+	T()
+	{
+		cout &lt;&lt; 'A';
+	}
+	char f()
+	{
+		return 'B';
+	}
+	char g(char x)
+	{
+		if (x == 'A') return 'C';
+		else return 'D';
+	}
+};
+
+int main()
+{
+	T t, u;
+	t.g('B');
+	u.f();
+	t.g('A');
+}
+</code>
+
+			<p>55. What does the following code print?</p>
+
+<code>
+class T {
+public:
+	T()
+	{
+		data = 'X'; cout &lt;&lt; 'A';
+	}
+	void f() const
+	{
+		cout &lt;&lt; 'B' &lt;&lt; data;
+	}
+	char g(char x)
+	{
+		cout &lt;&lt; 'C' &lt;&lt; x;
+		return x;
+	}
+	char data;
+};
+
+int main()
+{
+	T a;
+	a.f();
+	a.data = a.g('Z');
+	a.g('Q');
+	a.f();
+	return 0;
+}
+</code>
+
+			<h2>Coding</h2>
+
+			<p>56. Write C++ code that reads 2 floating-point numbers and displays the sum of those numbers.</p>
+
+			<p>57. Write C++ code that reads 1 line and displays the length of that line.</p>
+
+			<p>58. Define the body of <tt>is_even</tt>, this function shall return <tt>true</tt> if the value of <tt>x</tt> is an even integer; <tt>false</tt> shall be returned otherwise.</p>
+
+			<code>
+bool is_even(int x)
+{
+
+}
+			</code>
+
+			<p>59. Define the body of <tt>sum_of_double</tt>, this function shall return the sum of the values found in v or 0 if v is empty.</p>
+
+			<code>
+double sum_of_doubles(const vector&lt;double&gt;&amp; v)
+{
+
+}
+			</code>
+
+			<p>60. Define the body of <tt>find_double</tt>, this function shall return the index of the first occurrence of the value of x found in one of the elements of v or -1 if no such value was found. Do not perform function calls in your code.</p>
+
+			<code>
+int find_double(const vector&lt;double&gt;&amp; v, double x)
+{
+
+}
+			</code>
+
+			<p>61. Complete the following program; this program should display a random integer value between a minimum and maximum value (inclusive) specified by the user.</p>
+
+			<code>
+#include &lt;iostream&gt;
+#include &lt;ctime&gt;
+#include &lt;cstdlib&gt;
+using namespace std;
+
+int main()
+{
+	int min, max;
+	srand(time(0));
+	cout &lt;&lt; "Minimum integer: ";
+	cin &gt;&gt; min;
+	cout &lt;&lt; "Maximum integer: ";
+	cin &gt;&gt; max;
+
+
+
+	return 0;
+}
+			</code>
+
+			<p>62. Define the body of <tt>factorial</tt>, this function shall return the factorial of x or 1 if x is less than or equal to 1. Examples: factorial of 0 is 1, factorial of 1 is 1, factorial of 3 is 3 * 2 * 1 = 6, factorial of 4 is 4 * 3 * 2 * 1 = 24, factorial of 5 is 5 * 4 * 3 * 2 * 1 = 120.</p>
+
+			<code>
+int factorial(int x)
+{
+
+}
+			</code>
+
+			<p>63. Define the body of <tt>is_prime</tt>, this function shall return <tt>true</tt> if x is a prime integer and <tt>false</tt> otherwise.</p>
+
+			<code>
+bool is_prime(int x)
+{
+
+}
+			</code>
+
+		</div>
+	</body>
+</html>
